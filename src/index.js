@@ -1,4 +1,5 @@
-import List from './lib/list';
+import List from './dist/bundle.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
