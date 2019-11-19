@@ -1,4 +1,4 @@
-import List from './dist/bundle.js';
+import List from './lib/list';
 
 
 document.addEventListener('DOMContentLoaded', () => {
