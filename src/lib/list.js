@@ -3,10 +3,20 @@ import { empty, elList, elLecture } from './helpers';
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
+    this.jsonfile = 'lectures.json';
   }
 
   load() {
     empty(this.container);
+
+    console.log(this.jsonfile);
+
+    //Eh sem sækir í this.jsonfile (lista)
+    //Eh sem býr til elementin - thumbnailin
+    //Eh sem birtir gögn 
+    
+
+
     // þarf að skoða betur hvernig parse virkar, hvernig við
     // vísum í hvert element í lectureCards og hvernig við
     // búum síðan til element úr því. Mér datt í hug að við
@@ -15,13 +25,25 @@ export default class List {
     // þ.e.a.s. load(css) væri ClickHandler fyrir CSS button
     // o.s.frv. Ég veit ekki hvort það sem er að neðan er
     // vitrænt... Þurfti bara að hlaupa áður en ég komst lengra.
-    lectureCards = JSON.parse("lectures.json");
+    /*lectureCards = JSON.parse("lectures.json");
     let slugs = lectureCards.slug;
     if(lectureCards.category = html) {
       for(slug of slugs) {
 
       }
 
-    }
+    }*/
+
+
+    //const card = elList('div', 'list__card', getData);
   }
+
+  
+  //Eh sem filtrar ef ýtt er á hnapp
+  filter() {
+    //Eh sem filtrar ef ýtt er á hnapp
+  }
+
+
+
 }

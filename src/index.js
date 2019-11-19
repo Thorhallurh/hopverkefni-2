@@ -1,4 +1,4 @@
-import List from './lib/list';
+import List from 'lib/list.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
