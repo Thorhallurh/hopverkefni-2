@@ -9,11 +9,13 @@ export default class List {
   load() {
     empty(this.container);
 
-    console.log(this.jsonfile);
+    let lectureCards = JSON.parse(lectures.json);
+
+    console.log(lectureCards);
 
     //Eh sem sækir í this.jsonfile (lista)
     //Eh sem býr til elementin - thumbnailin
-    //Eh sem birtir gögn 
+    //Eh sem birtir gögn
     
 
 
