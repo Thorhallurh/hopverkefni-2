@@ -23,9 +23,10 @@ export default class Lectures {
         displayError('Villa við að sækja gögn');
         console.log(error);
       });
+  }
 
-
-
+  displayError(error) {
+    
   }
 
 

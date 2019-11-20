@@ -52,13 +52,15 @@ export default class List {
         }
         throw new Error('Gat ekki sótt fyrirlestra');
       })
-  
+
+     
   }
 
   
 
 
   displayData(lectureList) {
+    
 
   }
 
