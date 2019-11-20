@@ -1,27 +1,32 @@
-// fjarlægir öll börn elements
+/**
+ * Hreinsa börn úr elementi
+ *
+ * @param {object} element Element sem á að hreinsa börn úr
+ */
 export function empty(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 }
 
-// hjálparfall til að útbúa element
-// þarf að sníða að okkar þörfum, staðla fyrir
-// attributes sem við viljum vísa í og þannig, ekki búið
-// eflaust best að búa til tvö föll, eitt fyrir forsíðu
-// og annað fyrir fyrirlestrasíðu
-export function elList(type, className, clickHandler) {
-  const element = document.createElement(type);
-  element.classList.add(className);
-  if (clickHandler)
-    element.addEventListener('click', clickHandler);
-  return element;
-}
+/**
+ * Búa til element og aukalega setja börn ef send með
+ *
+ * @param {string} name Nafn á element
+ * @param  {...any} children Börn fyrir element
+ */
+export function el(name, ...children) {
+  const element = document.createElement(name);
 
-export function elLecture(type, className, clickHandler) {
-  const element = document.createElement(type);
-  element.classList.add(className);
-  if (clickHandler)
-    element.addEventListener('click', clickHandler);
+  if (Array.isArray(children)) {
+    children.forEach((child) => {
+      if (typeof child === 'string') {
+        element.appendChild(document.createTextNode(child));
+      } else if (child) {
+        element.appendChild(child);
+      }
+    });
+  }
+
   return element;
 }
