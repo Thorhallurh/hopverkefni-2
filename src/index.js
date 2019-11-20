@@ -9,6 +9,5 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     const list = new List();
     list.load();
-    list.fetchData();
   }
 });

@@ -9,6 +9,9 @@ export default class List {
 
   load() {
     empty(this.container);
+    this.fetchData();
+    this.getCards();
+    this.appendCards();
 
     //Eh sem sækir í this.jsonfile (lista)
     //Eh sem býr til elementin - thumbnailin
@@ -43,13 +46,23 @@ export default class List {
   fetchData() {
     fetch('./lectures.json')
       .then((response) => {
-        if(response.ok) {
-          return response.json();
+        if(!response.ok) {
+          throw new Error('Gat ekki sótt fyrirlestra');
         }
-        throw new Error('Gat ekki sótt fyrirlestra');
+          return response.json();
+      }).then((response) => console.log(response))
+      .catch((error) => {
+        console.log(error);
       })
   }
 
+  getCards() {
+
+  }
+
+  appendCards() {
+
+  }
 
   displayData(lectureList) {
 
