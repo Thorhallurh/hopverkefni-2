@@ -1,10 +1,10 @@
-import { empty, el} from './helpers';
+import { empty, el } from './helpers';
 
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
     this.button = document.querySelector('.button');
-    this.jsonfile = 'lectures.json';
+    this.jsonfile = './lectures.json';
   }
 
   load() {
@@ -41,17 +41,14 @@ export default class List {
 
 
   fetchData() {
-    fetch(this.jsonfile)
+    fetch('./lectures.json')
       .then((response) => {
         if(response.ok) {
           return response.json();
         }
         throw new Error('Gat ekki sótt fyrirlestra');
       })
-  
   }
-
-  
 
 
   displayData(lectureList) {
@@ -66,3 +63,10 @@ export default class List {
 
 
 }
+
+
+const s = window.location.search;
+
+let x = new URLSearchParams(s);
+
+x.get("slug");

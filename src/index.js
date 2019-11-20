@@ -1,6 +1,5 @@
 import List from './lib/list';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
   const isLecturePage = page.classList.contains('lecture-page');
@@ -10,5 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     const list = new List();
     list.load();
+    list.fetchData();
   }
 });
