@@ -11,23 +11,23 @@ export default class Lectures {
   loadOne(slug) {
     fetch(this.jsonfile)
       .then((response) => {
-        if (response.ok) {
-          return response.json();
+        if (!response.ok) {
+          throw new Error('Gat ekki sótt gögn');
         }
-        throw new Error('Gat ekki sótt gögn');
+        return response.json();
       })
       .then((data) => {
-        //Ná í gögn eftir nafni
+        const picked = data.lectures.find(i => i.slug === slug);
+        if(!picked) {
+          throw new Error('Finnur ekki fyrirlestur');
+        }
       })
       .catch((error) => {
-        displayError('Villa við að sækja gögn');
         console.log(error);
       });
   }
 
-  displayError(error) {
-    
-  }
+  
 
 
 

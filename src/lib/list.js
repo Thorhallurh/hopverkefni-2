@@ -48,11 +48,14 @@ export default class List {
   fetchData() {
     fetch(this.jsonfile)
       .then((response) => {
-        if(response.ok) {
-          return response.json();
+        if(!response.ok) {
+          throw new Error('Gat ekki sótt fyrirlestra'); 
         }
-        throw new Error('Gat ekki sótt fyrirlestra');
-      })     
+        return response.json();
+      }) 
+      .catch((error) => {
+        console.log(error);
+      })   
   }
 
   
@@ -64,9 +67,6 @@ export default class List {
   }
 
 
-  displayError(error) {
-
-  }
 
 
 
