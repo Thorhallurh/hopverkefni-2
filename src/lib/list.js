@@ -33,6 +33,7 @@ export default class List {
 
     }*/
 
+    this.fetchData();
 
     //const card = elList('div', 'list__card', getData);
   }
@@ -51,16 +52,14 @@ export default class List {
           return response.json();
         }
         throw new Error('Gat ekki sótt fyrirlestra');
-      })
-
-     
+      })     
   }
 
   
 
 
   displayData(lectureList) {
-    
+
 
   }
 
