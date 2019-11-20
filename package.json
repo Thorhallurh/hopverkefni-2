@@ -12,7 +12,9 @@
     "test": "npm-run-all eslint stylelint",
     "dev": "npm-run-all --parallel sass sass-watch browser-sync",
     "rollup": "rollup -c",
-    "rollup-watch": "rollup -c -w"
+    "rollup-watch": "rollup -c -w",
+    "babel": "babel src --out-dir dist",
+    "babel-watch": "babel src --out-dir dist --watch"
   },
   "keywords": [],
   "author": "",
