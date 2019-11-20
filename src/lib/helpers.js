@@ -30,3 +30,31 @@ export function el(name, ...children) {
 
   return element;
 }
+
+
+ // hjálparfall til að útbúa cards-element
+  export function elCard(title, category, thumbnail, slug) {
+    const element = document.createElement(div);
+    element.classList.add("list__card");
+    element.addEventListener('click', openLink(slug));
+    childTitle = document.createTextNode(p);
+    childTitle.classList.add("title");
+    childTitle.textContent = title;
+    childCat = document.createTextNode(p);
+    childCat.classList.add("category");
+    childCat.textContent = category;
+    childThumb = document.createElement(img);
+    childCat.classList.add("thumbnail");
+    setAttribute.childThumb("src", "/img/" + thumbnail);
+    element.appendChild(ChildThumb);
+    element.appendChild(ChildCat);
+    element.appendChild(ChildTitle);
+
+    return element;
+  }
+
+// hjálparfall til að opna fyrirlestrarsíður
+function openLink(slug) {
+  console.log(slug);
+}
+

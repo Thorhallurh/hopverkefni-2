@@ -1,4 +1,6 @@
-import { empty, el } from './helpers';
+import { empty, elCard } from './helpers';
+
+let cardArray = [];
 
 export default class List {
   constructor() {
@@ -10,8 +12,6 @@ export default class List {
   load() {
     empty(this.container);
     this.fetchData();
-    this.getCards();
-    this.appendCards();
 
     //Eh sem sækir í this.jsonfile (lista)
     //Eh sem býr til elementin - thumbnailin
@@ -42,7 +42,22 @@ export default class List {
     //Eh sem filtrar ef ýtt er á hnapp
   }
 
+  //býr til nýtt kort með elCard og bætir því inn í listann í DOM
+  getCards(e) {
+    e.forEach( () => {
+      elCard(e.title, e.category, e.thumbnail, e.slug);
+      document.querySelector('.list').appendChild(elCard);
+    })
+  };
 
+  
+
+  //þarf að vinna betur í að fá response.lectures (sem er object - ég hélt lengi að 
+  //það væri array) til að virka utan promise. Þetta er örugglega ekkert mál á endanum,
+  //ég bara elti nokkrar vitlausar kanínur niður vitlausar kanínuholur...)
+
+  // hér er möguleg kanínuhola til að vinna með þetta og góðar hugmyndir í hliðarpanelnum líka: 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
   fetchData() {
     fetch('./lectures.json')
       .then((response) => {
@@ -50,36 +65,23 @@ export default class List {
           throw new Error('Gat ekki sótt fyrirlestra');
         }
           return response.json();
-      }).then((response) => console.log(response))
+      })
+      .then((response) => {
+        //virkar ekki
+        cardArray.slice(Object.keys(response.lectures))
+      })
+      .then(console.log(cardArray))
       .catch((error) => {
         console.log(error);
-      })
-  }
-
-  getCards() {
-
-  }
-
-  appendCards() {
-
-  }
-
-  displayData(lectureList) {
-
-  }
-
-
-  displayError(error) {
-
-  }
-
-
+      });
+    }
 
 }
 
+// kóði sem hann Gunni dæmatímakennari skrifaði, ákvað bara að taka hann niður
 
-const s = window.location.search;
+    const s = window.location.search;
 
-let x = new URLSearchParams(s);
+    let x = new URLSearchParams(s);
 
-x.get("slug");
+    x.get("slug");
