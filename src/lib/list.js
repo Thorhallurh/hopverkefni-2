@@ -1,23 +1,17 @@
-import { empty, elList, elLecture } from './helpers';
+import { empty, elList, elLecture } from "./helpers";
 
 export default class List {
   constructor() {
-    this.container = document.querySelector('.list');
-    this.jsonfile = 'lectures.json';
+    this.container = document.querySelector(".list");
   }
 
   load() {
     empty(this.container);
 
-    let lectureCards = JSON.parse(lectures.json);
-
-    console.log(lectureCards);
 
     //Eh sem sækir í this.jsonfile (lista)
     //Eh sem býr til elementin - thumbnailin
     //Eh sem birtir gögn
-    
-
 
     // þarf að skoða betur hvernig parse virkar, hvernig við
     // vísum í hvert element í lectureCards og hvernig við
@@ -36,16 +30,11 @@ export default class List {
 
     }*/
 
-
     //const card = elList('div', 'list__card', getData);
   }
 
-  
   //Eh sem filtrar ef ýtt er á hnapp
   filter() {
     //Eh sem filtrar ef ýtt er á hnapp
   }
-
-
-
 }
