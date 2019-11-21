@@ -17,14 +17,23 @@ export default class Lectures {
         return response.json();
       })
       .then((data) => {
-        const picked = data.lectures.find(i => i.slug === slug);
-        if(!picked) {
-          throw new Error('Finnur ekki fyrirlestur');
-        }
+        createOne(data, slug);
       })
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  createOne(data, slug) {
+    
+
+  }
+
+  loadLecture() {
+    const qs = new URLSearchParams(window.location.search);
+    const slug = qs.get('slug');
+
+    this.loadOne(slug);
   }
 
   

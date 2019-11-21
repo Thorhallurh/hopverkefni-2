@@ -1,5 +1,6 @@
 import { empty, el} from './helpers';
-import { makeImage, makeTitle } from './maker';
+import { makeImage, makeTitle, makeCategory } from './maker';
+import { loadSaved } from './storage';
 
 export default class List {
   constructor() {
@@ -32,27 +33,56 @@ export default class List {
 
   getCards(data) {
     console.log(data)
-    data.lectures.map((item) => {
-      this.getCard(item);
+    const cards = data.lectures.map((item) => {
+      const col = el('div', this.getCard(item));
+      col.classList.add('cards__col');
     });
+
+    const row = el('div', ...cards);
+    row.classList.add('cards__row');
+
   }
 
   getCard(item) {
-    const card = el('div');
-    card.className = `card ${item.category}`;
 
+    //Div fyrir öll gögnin 
+    const card = el('div');
+    card.classList.add('card');
+    this.container.appendChild(card);
+
+    //Thumbnail fyrir fyrirlestur
     const img = makeImage(item.thumbnail);
     card.appendChild(img);
 
+    //Textadiv utan um annað en mynd
+    const textdiv = el('div');
+    textdiv.classList.add('card__text');
+    card.appendChild(textdiv);
+
+    //Div fyrir flokk og titil
+    const titlecatdiv = el('div');
+    titlecatdiv.classList.add('card__titlecat');
+    card.appendChild(titlecatdiv);
+    
+    //Div fyrir title og flokk í sitthvoru lagi
+    const titlediv = el('div');
+    titlediv.classList.add('title');
+    titlecatdiv.appendChild(titlediv);
     const title = makeTitle(item.title, item.slug);
-    title.className = 'card__title';
-    card.appendChild(title);
+    titlediv.appendChild(title);
 
-    const link = el('a', img, title);
-    link.setAttribute('href', `./fyrirlestur.html?slug=${item.slug}`);
-    card.append(link);
+    const catdiv = el('div');
+    catdiv.classList.add('category');
+    titlecatdiv.appendChild(catdiv);
+    const cat = makeCategory(item.category);
+    catdiv.appendChild(cat);
 
-    this.container.appendChild(card);
+    //Tjékkar ef fyrirlestur er búinn og bætir við check-merki
+    if(loadSaved().includes(item.title)) {
+      const checked = el('div', '✓');
+      checked.classList.add('card__finished');
+      titlecatdiv.appendChild(checked);    
+    }
 
   }
 

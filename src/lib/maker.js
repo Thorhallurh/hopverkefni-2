@@ -3,7 +3,7 @@ import {el} from './helpers';
 
 /**
  * 
- * Element maker for image
+ * Element maker fyrir image
  */
 export function makeImage(imagePath) {
   if(!imagePath) {
@@ -17,7 +17,7 @@ export function makeImage(imagePath) {
 }
 
 /*
-* Element maker for title
+* Element maker fyrir title
 */
 export function makeTitle(title, slug) {
   const link = el('a');
@@ -29,15 +29,68 @@ export function makeTitle(title, slug) {
 
 
 /*
-* Element maker for text
+* Element maker fyrir text
 */
 export function makeText(text) {
   return el('p', text);
 }
 
 /*
-* Element maker for category
+* Element maker fyrir category
 */
 export function makeCategory(category) {
   return el('h3', category);
+}
+
+/*
+ * Element maker fyrir quote
+ */
+export function makeQuote(quote) {
+  const quoteEl = el('blockquote');
+  quoteEl.classList.add('quote');
+  const quoteText = makeText(quote.data);
+  quoteText.classList.add('quote__data');
+
+  const quoteAtt = makeText(quote.attribute);
+  quoteAtt.classList.add('quote__attribute');
+
+  quoteEl.appendChild(quoteText);
+  quoteEl.appendChild(quoteAtt);
+
+  return quoteEl;
+}
+
+/**
+ * Element maker fyrir heading 
+ * */
+export function makeHeading(heading, size) {
+  return el(size, heading);
+}
+
+/*
+* Element maker fyrir code
+*/
+export function makeCode(code) {
+  const preEl = el('pre');
+  const codeEl = el('code', code);
+  preEl.appendChild(codeEl);
+  return preEl;
+}
+
+/*
+* Element maker fyrir youtube vídeó 
+*/
+export function makeVideo(youtube) {
+  const videoEl = el('iframe');
+  videoEl.src = youtube;
+  videoEl.frameborder = '0';
+  videoEl.allowfullscreen = '0';
+  return videoEl;
+}
+
+/*
+* Element maker fyrir lista 
+*/
+export function makeList(listitem) {
+  return el('li', listitem);
 }
