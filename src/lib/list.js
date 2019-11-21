@@ -1,47 +1,16 @@
 import { empty, el} from './helpers';
+import { makeImage, makeTitle } from './maker';
 
 export default class List {
   constructor() {
-    this.container = document.querySelector('.list');
+    this.container = document.querySelector('.cards');
     this.button = document.querySelector('.button');
-    this.jsonfile = 'lectures.json';
+    this.jsonfile = '../../lectures.json';
   }
 
   load() {
     empty(this.container);
-
-    //Eh sem sækir í this.jsonfile (lista)
-    //Eh sem býr til elementin - thumbnailin
-    //Eh sem birtir gögn 
-    
-
-
-    // þarf að skoða betur hvernig parse virkar, hvernig við
-    // vísum í hvert element í lectureCards og hvernig við
-    // búum síðan til element úr því. Mér datt í hug að við
-    // gætum bara byrjað á því að skrifa fyrir öll category
-    // og síðan hent argument inn í load fyrir hvern button,
-    // þ.e.a.s. load(css) væri ClickHandler fyrir CSS button
-    // o.s.frv. Ég veit ekki hvort það sem er að neðan er
-    // vitrænt... Þurfti bara að hlaupa áður en ég komst lengra.
-    /*lectureCards = JSON.parse("lectures.json");
-    let slugs = lectureCards.slug;
-    if(lectureCards.category = html) {
-      for(slug of slugs) {
-
-      }
-
-    }*/
-
-    this.fetchData();
-
-    //const card = elList('div', 'list__card', getData);
-  }
-
-  
-  //Eh sem filtrar ef ýtt er á hnapp
-  filter() {
-    //Eh sem filtrar ef ýtt er á hnapp
+    this.fetchData()
   }
 
 
@@ -52,22 +21,40 @@ export default class List {
           throw new Error('Gat ekki sótt fyrirlestra'); 
         }
         return response.json();
+      })
+      .then((data) => {
+        this.getCards(data);
       }) 
       .catch((error) => {
-        console.log(error);
-      })   
+        console.error(error);
+      }) 
+  }
+
+  getCards(data) {
+    console.log(data)
+    data.lectures.map((item) => {
+      this.getCard(item);
+    });
+  }
+
+  getCard(item) {
+    const card = el('div');
+    card.className = `card ${item.category}`;
+
+    const img = makeImage(item.thumbnail);
+    card.appendChild(img);
+
+    const title = makeTitle(item.title, item.slug);
+    title.className = 'card__title';
+    card.appendChild(title);
+
+    const link = el('a', img, title);
+    link.setAttribute('href', `./fyrirlestur.html?slug=${item.slug}`);
+    card.append(link);
+
+    this.container.appendChild(card);
+
   }
 
   
-
-
-  displayData(lectureList) {
-
-
-  }
-
-
-
-
-
 }
