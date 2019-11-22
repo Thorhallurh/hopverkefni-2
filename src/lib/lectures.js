@@ -43,7 +43,6 @@ export default class Lectures {
 
       });
 
-
   }
 
   getLectures(data) {
@@ -111,11 +110,6 @@ export default class Lectures {
     .then(data => this.getLectures(data));
   }
 
-  
-
-
-
-
-
 
 }
+

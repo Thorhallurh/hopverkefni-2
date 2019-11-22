@@ -1,22 +1,25 @@
+
 import { empty, el} from './helpers';
 import { makeImage, makeTitle, makeCategory } from './maker';
 import { loadSaved } from './storage';
+
 
 export default class List {
   constructor() {
     this.container = document.querySelector('.cards');
     this.button = document.querySelector('.button');
     this.jsonfile = '../../lectures.json';
+
   }
 
   load() {
     empty(this.container);
     this.fetchData()
+
   }
 
-
   fetchData() {
-    fetch(this.jsonfile)
+    fetch('./lectures.json')
       .then((response) => {
         if(!response.ok) {
           throw new Error('Gat ekki sótt fyrirlestra'); 
@@ -86,5 +89,5 @@ export default class List {
 
   }
 
-  
 }
+
