@@ -18,6 +18,9 @@ export default class List {
 
   }
 
+  /*
+  * Nær í gögn 
+  */
   fetchData() {
     fetch('./lectures.json')
       .then((response) => {
@@ -34,18 +37,26 @@ export default class List {
       }) 
   }
 
+  /*
+  * Mappar gögnin í JSON og býr til col og row
+  */
   getCards(data) {
     console.log(data)
     const cards = data.lectures.map((item) => {
       const col = el('div', this.getCard(item));
       col.classList.add('cards__col');
+      this.container.appendChild(col);
     });
 
     const row = el('div', ...cards);
     row.classList.add('cards__row');
+    this.container.appendChild(row);
 
   }
 
+  /*
+  * Býr til thumbnail fyrir hvern og einn fyrirlestur
+  */
   getCard(item) {
 
     //Div fyrir öll gögnin 

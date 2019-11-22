@@ -11,6 +11,9 @@ export default class Lectures {
     this.header = document.querySelector('.header');
   }
 
+  /*
+  * Nær í gögn út frá slug, býr til header með réttum titli, cat og mynd.
+  */
   fetchLecture(slug) {
     return fetch(this.jsonfile)
       .then((response) => {
@@ -45,12 +48,18 @@ export default class Lectures {
 
   }
 
+  /*
+  * Mappar gegnum öll JSON gögnin
+  */
   getLectures(data) {
     data.content.map((item) => {
       this.createLecture(item);
     }); 
   }
 
+  /*
+  * Setur upp fyrirlestur - sýnir öll item
+  */
   createLecture(item) {
 
     if(item.type === 'image') {
@@ -79,6 +88,9 @@ export default class Lectures {
  
   }
 
+  /*
+  * Nær í mynd og setur caption undir
+  */
   imageItem(item) {
     const imgEl = makeImage(item.data);
     const imgCap = el('p');
@@ -88,6 +100,9 @@ export default class Lectures {
     this.container.appendChild(imgCap);
   }
 
+  /*
+  * Býr til lista
+  */
   listItem(item) {
     const listEl = el('ul');
     listEl.classList.add('list');
@@ -102,6 +117,9 @@ export default class Lectures {
   }
 
 
+  /*
+  * Notað í index.js, nær í slug út frá URL
+  */
   loadLecture() {
     const qs = new URLSearchParams(window.location.search);
     const slug = qs.get('slug');
