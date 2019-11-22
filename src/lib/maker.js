@@ -5,13 +5,13 @@ import {el} from './helpers';
  * 
  * Element maker fyrir image
  */
-export function makeImage(imagePath) {
-  if(!imagePath) {
+export function makeImage(image) {
+  if(!image) {
     return el('div');
   }
 
   const imageEl = el('img');
-  imageEl.src = `${imagePath}`;
+  imageEl.src = `${image}`;
   imageEl.classList.add('thumbnail');
   return imageEl;
 }
@@ -63,7 +63,7 @@ export function makeQuote(quote) {
 /**
  * Element maker fyrir heading 
  * */
-export function makeHeading(heading, size) {
+export function makeHeading(size, heading) {
   return el(size, heading);
 }
 
