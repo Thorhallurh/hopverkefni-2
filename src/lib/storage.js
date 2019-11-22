@@ -9,7 +9,7 @@ const LOCALSTORAGE_KEY = 'finished_lecture';
  * Sækir gögn úr localStorage.
  * @returns {array} fylki af lectures eða tóma fylkið ef ekkert vistað.
  */
-export function load() {
+export function loadSaved() {
   const finishedLectures = localStorage.getItem(LOCALSTORAGE_KEY);
   const finished = JSON.parse(finishedLectures) || [];
 

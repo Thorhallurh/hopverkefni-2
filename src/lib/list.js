@@ -1,87 +1,93 @@
-import { empty, elCard } from './helpers';
 
-let cardArray = [];
+import { empty, el} from './helpers';
+import { makeImage, makeTitle, makeCategory } from './maker';
+import { loadSaved } from './storage';
+
 
 export default class List {
   constructor() {
-    this.container = document.querySelector('.list');
+    this.container = document.querySelector('.cards');
     this.button = document.querySelector('.button');
-    this.jsonfile = './lectures.json';
+    this.jsonfile = '../../lectures.json';
+
   }
 
   load() {
     empty(this.container);
-    this.fetchData();
+    this.fetchData()
 
-    //Eh sem sækir í this.jsonfile (lista)
-    //Eh sem býr til elementin - thumbnailin
-    //Eh sem birtir gögn
-
-    // þarf að skoða betur hvernig parse virkar, hvernig við
-    // vísum í hvert element í lectureCards og hvernig við
-    // búum síðan til element úr því. Mér datt í hug að við
-    // gætum bara byrjað á því að skrifa fyrir öll category
-    // og síðan hent argument inn í load fyrir hvern button,
-    // þ.e.a.s. load(css) væri ClickHandler fyrir CSS button
-    // o.s.frv. Ég veit ekki hvort það sem er að neðan er
-    // vitrænt... Þurfti bara að hlaupa áður en ég komst lengra.
-    /*lectureCards = JSON.parse("lectures.json");
-    let slugs = lectureCards.slug;
-    if(lectureCards.category = html) {
-      for(slug of slugs) {
-
-      }
-
-    }*/
-
-    //const card = elList('div', 'list__card', getData);
   }
 
-  //Eh sem filtrar ef ýtt er á hnapp
-  filter() {
-    //Eh sem filtrar ef ýtt er á hnapp
-  }
-
-  //býr til nýtt kort með elCard og bætir því inn í listann í DOM
-  getCards(e) {
-    e.forEach( () => {
-      elCard(e.title, e.category, e.thumbnail, e.slug);
-      document.querySelector('.list').appendChild(elCard);
-    })
-  };
-
-  
-
-  //þarf að vinna betur í að fá response.lectures (sem er object - ég hélt lengi að 
-  //það væri array) til að virka utan promise. Þetta er örugglega ekkert mál á endanum,
-  //ég bara elti nokkrar vitlausar kanínur niður vitlausar kanínuholur...)
-
-  // hér er möguleg kanínuhola til að vinna með þetta og góðar hugmyndir í hliðarpanelnum líka: 
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
   fetchData() {
     fetch('./lectures.json')
       .then((response) => {
         if(!response.ok) {
-          throw new Error('Gat ekki sótt fyrirlestra');
+          throw new Error('Gat ekki sótt fyrirlestra'); 
         }
-          return response.json();
+        return response.json();
       })
-      .then((response) => {
-        //virkar ekki
-        cardArray.slice(Object.keys(response.lectures))
-      })
-      .then(console.log(cardArray))
+      .then((data) => {
+        this.getCards(data);
+      }) 
       .catch((error) => {
-        console.log(error);
-      });
+        console.error(error);
+      }) 
+  }
+
+  getCards(data) {
+    console.log(data)
+    const cards = data.lectures.map((item) => {
+      const col = el('div', this.getCard(item));
+      col.classList.add('cards__col');
+    });
+
+    const row = el('div', ...cards);
+    row.classList.add('cards__row');
+
+  }
+
+  getCard(item) {
+
+    //Div fyrir öll gögnin 
+    const card = el('div');
+    card.classList.add('card');
+    this.container.appendChild(card);
+
+    //Thumbnail fyrir fyrirlestur
+    const img = makeImage(item.thumbnail);
+    card.appendChild(img);
+
+    //Textadiv utan um annað en mynd
+    const textdiv = el('div');
+    textdiv.classList.add('card__text');
+    card.appendChild(textdiv);
+
+    //Div fyrir flokk og titil
+    const titlecatdiv = el('div');
+    titlecatdiv.classList.add('card__titlecat');
+    card.appendChild(titlecatdiv);
+    
+    //Div fyrir title og flokk í sitthvoru lagi
+    const titlediv = el('div');
+    titlediv.classList.add('title');
+    titlecatdiv.appendChild(titlediv);
+    const title = makeTitle(item.title, item.slug);
+    titlediv.appendChild(title);
+
+    const catdiv = el('div');
+    catdiv.classList.add('category');
+    titlecatdiv.appendChild(catdiv);
+    const cat = makeCategory(item.category);
+    catdiv.appendChild(cat);
+
+    //Tjékkar ef fyrirlestur er búinn og bætir við check-merki
+    if(loadSaved().includes(item.title)) {
+      const checked = el('div', '✓');
+      checked.classList.add('card__finished');
+      titlecatdiv.appendChild(checked);    
     }
+
+  }
 
 }
 
-// kóði sem hann Gunni dæmatímakennari skrifaði, ákvað bara að taka hann niður
-
-    const s = window.location.search;
-
-    let x = new URLSearchParams(s);
-
-    x.get("slug");
