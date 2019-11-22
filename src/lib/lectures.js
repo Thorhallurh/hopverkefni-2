@@ -1,28 +1,11 @@
 import {empty, el} from './helpers';
-<<<<<<< HEAD
-import {save, load} from './storage';
-import {makeTitle, makeImage, makeText, makeCategory} from './maker';
-=======
 import {save, loadSaved} from './storage';
 import {makeImage, makeText, makeQuote, 
   makeHeading, makeList, makeCode, makeVideo, makeCategory, makeTitle} from './maker';
->>>>>>> e73592bfe622a8e509723db92a0a2cb2758fbc44
 
 
 export default class Lectures {
   constructor() {
-<<<<<<< HEAD
-    this.container = document.querySelector('.lecture-page');
-    this.jsonfile = './lectures.json';
-  }
-
-  /**
-   * Leitar í json (lectures) eftir slug, 
-   * @param {*} slug 
-   */
-  loadOne(slug) {
-    fetch(this.jsonfile)
-=======
     this.container = document.querySelector('.lecture');
     this.jsonfile = '../../lectures.json';
     this.header = document.querySelector('.header');
@@ -30,7 +13,6 @@ export default class Lectures {
 
   fetchLecture(slug) {
     return fetch(this.jsonfile)
->>>>>>> e73592bfe622a8e509723db92a0a2cb2758fbc44
       .then((response) => {
         if (!response.ok) {
           throw new Error('Gat ekki sótt gögn');
@@ -40,53 +22,6 @@ export default class Lectures {
       .then((data) => {
         const picked = data.lectures.find(i => i.slug === slug);
         if(!picked) {
-<<<<<<< HEAD
-          throw new Error('Fyrirlestur finnst ekki');
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });   
-
-      return picked;
-  }
-
-  /**
-   * Maps all data in JSON file
-   */
-  mapData(data) {
-    data.content.map((item) => {
-      this.getItem(item);
-      return true;
-    })
-  }
-
-  /**
-   * Checks every item in chosen lecture array. 
-   */
-  getItem(item) {
-
-    const title = document.querySelector('.header__title');
-    title.appendChild(item.title);
-    const category = document.querySelector('.header__category');
-    category.appendChild(item.category);
-    
-  }
-
-
-
-
-
-  /**
-   * Loads a lecture
-   */
-  load() {
-    const qs = new URLSearchParams(window.location.search);
-    const slug = qs.get('slug');
-
-    this.loadOne(slug)
-      .then(data => this.mapData(data));
-=======
           throw new Error('Fyrirlestur fannst ekki');
         }
 
@@ -164,7 +99,6 @@ export default class Lectures {
       this.container.appendChild(listEl);
     }
 
->>>>>>> e73592bfe622a8e509723db92a0a2cb2758fbc44
   }
 
 
