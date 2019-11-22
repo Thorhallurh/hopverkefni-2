@@ -27,7 +27,7 @@ export default class Lectures {
 
 
         //Header
-        const headerCat = el('div', picked.category);
+        const headerCat = makeCategory(picked.category);
         headerCat.classList.add('header__category');
         const headerTitle = el('h2', picked.title);
         headerTitle.classList.add('header__title');
