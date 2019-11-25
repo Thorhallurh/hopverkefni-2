@@ -7,15 +7,13 @@ import { loadSaved } from './storage';
 export default class List {
   constructor() {
     this.container = document.querySelector('.cards');
-    this.button = document.querySelector('.button');
     this.jsonfile = '../../lectures.json';
 
   }
 
   load() {
     empty(this.container);
-    this.fetchData()
-
+    this.fetchData();
   }
 
   /*
