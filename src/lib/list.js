@@ -68,28 +68,24 @@ export default class List {
     const img = makeImage(item.thumbnail);
     card.appendChild(img);
 
-    //Textadiv utan um annað en mynd
-    const textdiv = el('div');
-    textdiv.classList.add('card__text');
-    card.appendChild(textdiv);
-
     //Div fyrir flokk og titil
     const titlecatdiv = el('div');
     titlecatdiv.classList.add('card__titlecat');
     card.appendChild(titlecatdiv);
     
     //Div fyrir title og flokk í sitthvoru lagi
-    const titlediv = el('div');
-    titlediv.classList.add('title');
-    titlecatdiv.appendChild(titlediv);
-    const title = makeTitle(item.title, item.slug);
-    titlediv.appendChild(title);
-
+    //víxlaði til að setja div í rétta röð upp á útlit
     const catdiv = el('div');
     catdiv.classList.add('category');
     titlecatdiv.appendChild(catdiv);
     const cat = makeCategory(item.category);
     catdiv.appendChild(cat);
+
+    const titlediv = el('div');
+    titlediv.classList.add('title');
+    titlecatdiv.appendChild(titlediv);
+    const title = makeTitle(item.title, item.slug);
+    titlediv.appendChild(title);
 
     //Tjékkar ef fyrirlestur er búinn og bætir við check-merki
     if(loadSaved().includes(item.title)) {
