@@ -1,8 +1,9 @@
 
-import { empty, el} from './helpers';
+import { empty, el, clicked} from './helpers';
 import { makeImage, makeTitle, makeCategory } from './maker';
 import { loadSaved } from './storage';
 
+const filters = [];
 
 export default class List {
   constructor() {
@@ -10,8 +11,35 @@ export default class List {
     this.jsonfile = '../../lectures.json';
 
   }
+  
 
   load() {
+    document.querySelector('.button__Html').addEventListener('click', (e) => {
+      clicked(e);
+      toggleFilter("html");
+      this.fetchData();
+    });
+    
+    document.querySelector('.button__Css').addEventListener('click', (e) => {
+      clicked(e);
+      toggleFilter("css");
+      this.fetchData();
+    });
+  
+    document.querySelector('.button__Javascript').addEventListener('click', (e) => {
+      clicked(e);
+      toggleFilter("javascript");
+      this.fetchData();
+    });
+
+    function toggleFilter (string) {
+      if (filters.includes(string)) {
+        filters.splice(filters.indexOf(string),1);
+      } else {
+        filters.push(string);
+      }
+    }
+
     empty(this.container);
     this.fetchData();
   }
@@ -25,26 +53,31 @@ export default class List {
         if(!response.ok) {
           throw new Error('Gat ekki sótt fyrirlestra'); 
         }
-        return response.json();
+          return response.json();
       })
       .then((data) => {
-        this.getCards(data);
+        let lectures = data[Object.keys(data)[0]];
+        let filteredLectures = lectures.filter(function(value){
+          return filters.indexOf(value.category) !== -1;
+        });
+        if (filters.length == 0) {
+          empty(this.container);
+          lectures.forEach((item) => {
+            this.getCard(item)
+          });
+        } else {
+          empty(this.container);
+          filteredLectures.forEach((item) => {
+            this.getCard(item)
+          });
+        }
       }) 
       .catch((error) => {
         console.error(error);
       }) 
   }
 
-  /*
-  * Mappar gögnin í JSON og býr til col og row
-  */
-  getCards(data) {
-    console.log(data)
-    data.lectures.map((item) => {
-      this.getCard(item);
-    });
-
-  }
+  
 
   /*
   * Býr til thumbnail fyrir hvern og einn fyrirlestur

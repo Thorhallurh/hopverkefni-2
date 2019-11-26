@@ -59,16 +59,16 @@ function openLink(slug) {
 }
 
 //lítið fall til að merkja buttons græna
-
 //bilað, virkar bara á on, fer aldrei í off, þarf að bæta
 //við CSS-i til að skilgreina style, reikna ég með
 export function clicked(e) {
-  if(e.target.style.backgroundColor === '#2d2') {
-    e.target.style.backgroundColor = '';
+  let button = e.target;
+  if(button.style.backgroundColor === 'rgb(34, 221, 34)') {
+    button.style.backgroundColor = '';
     console.log("off");
   }      
   else {
-    e.target.style.backgroundColor = '#2d2';
+    button.style.backgroundColor = 'rgb(34, 221, 34)';
     console.log("on");
   }
 }

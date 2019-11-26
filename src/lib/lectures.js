@@ -150,9 +150,11 @@ export default class Lectures {
 
     this.finishButton.addEventListener('click', this.finishLecture.bind(this, slug));
 
-    if(!(localStorage.getItem(slug) === null)) {
-      this.finishButton.classList.add('buttons__finish--done');
-    }
+    // ef þetta er commentað út, þá virkar græni liturinn fyrir hnappinn eðlilega
+    // ---
+    // if(!(localStorage.getItem(slug) === null)) {
+    //   this.finishButton.classList.add('buttons__finish--done');
+    // }
 
 
 

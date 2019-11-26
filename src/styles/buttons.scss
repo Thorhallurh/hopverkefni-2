@@ -1,0 +1,12 @@
+.button > * {
+    background-color: #2d2;
+}
+
+.buttons__finish {
+    padding: 0;
+    border: none;
+    background: none;
+    &--done {
+        color: #1a1;
+    }
+}
