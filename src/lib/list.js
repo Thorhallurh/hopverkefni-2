@@ -1,8 +1,9 @@
 
-import { empty, el} from './helpers';
+import { empty, el, clicked} from './helpers';
 import { makeImage, makeTitle, makeCategory } from './maker';
 import { loadSaved } from './storage';
 
+const filters = [];
 
 export default class List {
   constructor() {
@@ -10,8 +11,38 @@ export default class List {
     this.jsonfile = '../../lectures.json';
 
   }
+  
 
   load() {
+    document.querySelector('.button__Html').addEventListener('click', (e) => {
+      clicked(e);
+      toggleFilter("html");
+      const list = new List();
+      list.load();
+    });
+    
+    document.querySelector('.button__Css').addEventListener('click', (e) => {
+      clicked(e);
+      toggleFilter("css");
+      const list = new List();
+      list.load();
+    });
+  
+    document.querySelector('.button__Javascript').addEventListener('click', (e) => {
+      clicked(e);
+      toggleFilter("java");
+      const list = new List();
+      list.load();
+    });
+
+    function toggleFilter (string) {
+      if (filters.includes(string)) {
+        filters.splice(filters.indexOf(string),1);
+      } else {
+        filters.push(string);
+      }
+    }
+
     empty(this.container);
     this.fetchData();
   }
@@ -25,32 +56,35 @@ export default class List {
         if(!response.ok) {
           throw new Error('Gat ekki sótt fyrirlestra'); 
         }
-        return response.json();
+          return response.json();
       })
       .then((data) => {
-        this.getCards(data);
+        let lectures = data[Object.keys(data)[0]];
+        console.log(lectures);
+        if (filters.length == 0) {
+          lectures.forEach((item) => {
+            this.getCard(item)
+          });
+        } else {
+          let filteredLectures = lectures.filter(function(value){
+            return filters.indexOf(value.category) !== -1;
+          });
+          //hvers vegna uppfærist filteredLectures ekki
+          //samhliða filter?
+          //og hvers vegna fæ ég lúppu þannig allt endurtekur sig?
+          //og hvers vegna breytist button ekki nema einu sinni?
+          console.log(filteredLectures);
+          filteredLectures.forEach((item) => {
+            this.getCard(item)
+          });
+        }
       }) 
       .catch((error) => {
         console.error(error);
       }) 
   }
 
-  /*
-  * Mappar gögnin í JSON og býr til col og row
-  */
-  getCards(data) {
-    console.log(data)
-    const cards = data.lectures.map((item) => {
-      const col = el('div', this.getCard(item));
-      col.classList.add('cards__col');
-      this.container.appendChild(col);
-    });
-
-    const row = el('div', ...cards);
-    row.classList.add('cards__row');
-    this.container.appendChild(row);
-
-  }
+  
 
   /*
   * Býr til thumbnail fyrir hvern og einn fyrirlestur
