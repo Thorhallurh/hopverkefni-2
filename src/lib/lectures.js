@@ -152,9 +152,10 @@ export default class Lectures {
 
     // ef þetta er commentað út, þá virkar græni liturinn fyrir hnappinn eðlilega
     // ---
-    // if(!(localStorage.getItem(slug) === null)) {
-    //   this.finishButton.classList.add('buttons__finish--done');
-    // }
+     if((localStorage.getItem(slug) == "done")) {
+       this.finishButton.classList.add('buttons__finish--done');
+       this.finishButton.innerHTML = '✓ Fyrirlestur kláraður';
+     }
 
 
 
