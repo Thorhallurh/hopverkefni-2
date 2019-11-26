@@ -1,5 +1,4 @@
 import {empty, el} from './helpers';
-import {save, loadSaved, remove} from './storage';
 import {makeImage, makeText, makeQuote, 
   makeHeading, makeList, makeCode, makeVideo, makeCategory, makeTitle} from './maker';
 
@@ -92,18 +91,34 @@ export default class Lectures {
   }
 
 
+  // finishLecture(slug, e) {
+
+  //   const finished = e.target.classList.contains('buttons__finish--done');
+
+  //   if(finished) {
+  //     this.finishButton.innerHTML = 'Klára fyrirlestur';
+  //   } else {
+  //     this.finishButton.innerHTML = '✓ Fyrirlestur kláraður';
+  //     window.localStorage.setItem(slug, "checked")
+  //   }
+
+  //   this.finishButton.classList.toggle('buttons__finish--done');
+
+  // }
+
   finishLecture(slug, e) {
 
     const finished = e.target.classList.contains('buttons__finish--done');
 
     if(finished) {
       this.finishButton.innerHTML = 'Klára fyrirlestur';
+      localStorage.removeItem(slug);
     } else {
       this.finishButton.innerHTML = '✓ Fyrirlestur kláraður';
+      localStorage.setItem(slug, "checked")
     }
 
     this.finishButton.classList.toggle('buttons__finish--done');
-    localStorage.setItem(slug, slug);
 
   }
 
