@@ -17,22 +17,19 @@ export default class List {
     document.querySelector('.button__Html').addEventListener('click', (e) => {
       clicked(e);
       toggleFilter("html");
-      const list = new List();
-      list.load();
+      this.fetchData();
     });
     
     document.querySelector('.button__Css').addEventListener('click', (e) => {
       clicked(e);
       toggleFilter("css");
-      const list = new List();
-      list.load();
+      this.fetchData();
     });
   
     document.querySelector('.button__Javascript').addEventListener('click', (e) => {
       clicked(e);
-      toggleFilter("java");
-      const list = new List();
-      list.load();
+      toggleFilter("javascript");
+      this.fetchData();
     });
 
     function toggleFilter (string) {
@@ -60,20 +57,16 @@ export default class List {
       })
       .then((data) => {
         let lectures = data[Object.keys(data)[0]];
-        console.log(lectures);
+        let filteredLectures = lectures.filter(function(value){
+          return filters.indexOf(value.category) !== -1;
+        });
         if (filters.length == 0) {
+          empty(this.container);
           lectures.forEach((item) => {
             this.getCard(item)
           });
         } else {
-          let filteredLectures = lectures.filter(function(value){
-            return filters.indexOf(value.category) !== -1;
-          });
-          //hvers vegna uppfærist filteredLectures ekki
-          //samhliða filter?
-          //og hvers vegna fæ ég lúppu þannig allt endurtekur sig?
-          //og hvers vegna breytist button ekki nema einu sinni?
-          console.log(filteredLectures);
+          empty(this.container);
           filteredLectures.forEach((item) => {
             this.getCard(item)
           });

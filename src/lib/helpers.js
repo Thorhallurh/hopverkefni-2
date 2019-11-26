@@ -63,12 +63,12 @@ function openLink(slug) {
 //við CSS-i til að skilgreina style, reikna ég með
 export function clicked(e) {
   let button = e.target;
-  if(button.style.backgroundColor === '#2d2') {
-    button.style.backgroundColor = '#ccc';
+  if(button.style.backgroundColor === 'rgb(34, 221, 34)') {
+    button.style.backgroundColor = '';
     console.log("off");
   }      
   else {
-    button.style.backgroundColor = '#2d2';
+    button.style.backgroundColor = 'rgb(34, 221, 34)';
     console.log("on");
   }
 }
