@@ -1,0 +1,159 @@
+@import "config.scss";
+
+.lecture {
+  @include columns(12);
+
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media(max-width: $max-width -1) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  @media(min-width: 800px) {
+    @include columns(8);
+    margin-right: auto;
+    margin-left: auto;
+    
+  }
+}
+
+.text {
+  margin-bottom: $gutter * 2;
+  font-family: $font-main;
+ 
+}
+
+.image {
+
+  @include columns(12);
+
+  &__caption {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: $gutter;
+
+    @include columns(12);
+  }
+}
+
+.quote {
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+  margin-bottom: 2*$gutter;
+  font-family: $font-main;
+  background-color: $color-2;
+
+  &__attribute {
+    font-style: italic;
+  }
+
+  &__data {
+    padding-bottom: $gutter;
+  }
+
+}
+
+.heading {
+  font-family: $font-heading;
+  font-size: 2rem;
+  margin-bottom: $gutter;
+  margin-top: 2*$gutter;
+}
+
+.list {
+  padding-left: $gutter / 2;
+  margin-bottom: 2*$gutter;
+
+  &__item {
+    margin-bottom: $gutter;
+  }
+
+}
+
+.youtube {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  margin-bottom: 2*$gutter;
+
+  @include columns(12);
+
+  @media (min-width: 600px) {
+    height: 60vh;
+  }
+  @media (min-width: 800px) {
+    height: 70vh;
+  }
+}
+
+
+//Mögulega hægt að benda bara á header.scss
+.lectHeader {
+  margin-bottom: $gutter * 2;
+  background-color: $color-1;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__content {    
+    display: flex;
+    justify-content: center;
+    max-width: $max-width;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    height: 50vh;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 3rem;
+
+
+  }
+
+  &__category {
+    font-family: $font-heading;
+    text-transform: uppercase;
+
+  }
+}
+
+
+.footer {
+  display: flex;
+  margin-top: 3*$gutter;
+  margin-bottom: 3*$gutter;
+  font-family: $font-heading;
+  flex-direction: column; 
+  align-items: center; 
+  text-decoration: none;
+}
+
+.buttons {
+
+  &__finish {
+    display: inline block;
+    border: none;
+    font-family: $font-heading;
+    font-size: 1rem;
+    background: inherit;
+
+    &--done {
+      color: $color-5;
+    }
+
+  }
+
+  &__back {
+    text-decoration: none;
+    color: $color-1;
+  }
+
+
+
+}
+

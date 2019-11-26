@@ -8,7 +8,7 @@ export default class Lectures {
   constructor() {
     this.container = document.querySelector('.lecture');
     this.jsonfile = '../../lectures.json';
-    this.header = document.querySelector('.header');
+    this.header = document.querySelector('.lectHeader');
     this.footer = document.querySelector('.footer');
     this.finishButton = document.querySelector('.buttons__finish');
   }
@@ -33,11 +33,11 @@ export default class Lectures {
 
         //Header
         const headerCat = makeCategory(picked.category);
-        headerCat.classList.add('header__category');
+        headerCat.classList.add('lectHeader__category');
         const headerTitle = el('h2', picked.title);
-        headerTitle.classList.add('header__title');
+        headerTitle.classList.add('lectHeader__title');
         const headerContent = el('div', headerCat, headerTitle);
-        headerContent.classList.add('header__content');
+        headerContent.classList.add('lectHeader__content');
         this.header.appendChild(headerContent);
 
         if(picked.image) {
@@ -75,6 +75,7 @@ export default class Lectures {
       this.container.appendChild(quoteEl);
     } else if(item.type === 'heading') {
       const headingEl = makeHeading('h2', item.data);
+      headingEl.classList.add('heading');
       this.container.appendChild(headingEl);
     } else if(item.type === 'list') {
       this.listItem(item);
@@ -98,7 +99,7 @@ export default class Lectures {
     if(finished) {
       this.finishButton.innerHTML = 'Klára fyrirlestur';
     } else {
-      this.finishButton.innerHTML = ' Fyrirlestur kláraður';
+      this.finishButton.innerHTML = '✓ Fyrirlestur kláraður';
     }
 
     this.finishButton.classList.toggle('buttons__finish--done');
