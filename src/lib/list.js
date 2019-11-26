@@ -43,14 +43,8 @@ export default class List {
   getCards(data) {
     console.log(data)
     const cards = data.lectures.map((item) => {
-      const col = el('div', this.getCard(item));
-      col.classList.add('cards__col');
-      this.container.appendChild(col);
+      this.getCard(item);
     });
-
-    const row = el('div', ...cards);
-    row.classList.add('cards__row');
-    this.container.appendChild(row);
 
   }
 
@@ -92,7 +86,7 @@ export default class List {
     catdiv.appendChild(cat);
 
     //Tjékkar ef fyrirlestur er búinn og bætir við check-merki
-    if(loadSaved().includes(item.title)) {
+    if(!(localStorage.getItem(slug) === null)) {
       const checked = el('div', '✓');
       checked.classList.add('card__finished');
       titlecatdiv.appendChild(checked);    

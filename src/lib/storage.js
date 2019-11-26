@@ -18,10 +18,26 @@ export function loadSaved() {
 }
 
 export function save(slug) {
-  const finishedLectures = load();
-  if(!finishedLectures.includes(slug)) {
-    finishedLectures.push(slug);
+  const saved = loadSaved();
+  const index = saved.indexOf(slug);
+
+  if(index >= 0) {
+    saved.splice(index, 1);
+  } else {
+    saved.push(slug);
   }
-  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(finishedLectures));
+
+
+  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(saved));
   
+}
+
+export function remove(slug) {
+  const saved = loadSaved();
+  const index = saved.indexOf(slug);
+  
+  if (index > -1) {
+    saved.splice(index, 1);
+  }
+  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(saved));
 }
