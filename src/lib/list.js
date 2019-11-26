@@ -111,7 +111,7 @@ export default class List {
     const title = makeTitle(item.title, item.slug);
     titlediv.appendChild(title);
 
-    if(localStorage.getItem(item.slug) == "checked") {
+    if(localStorage.getItem(item.slug) == "done") {
       const checkMark = el('div', '✓');
       checkMark.classList.add('card__finished');
       titlecatdiv.appendChild(checkMark);

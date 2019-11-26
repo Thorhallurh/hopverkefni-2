@@ -1,4 +1,4 @@
-import {empty, el} from './helpers';
+import { el } from './helpers';
 import {makeImage, makeText, makeQuote, 
   makeHeading, makeList, makeCode, makeVideo, makeCategory, makeTitle} from './maker';
 
@@ -115,7 +115,7 @@ export default class Lectures {
       localStorage.removeItem(slug);
     } else {
       this.finishButton.innerHTML = '✓ Fyrirlestur kláraður';
-      localStorage.setItem(slug, "checked")
+      localStorage.setItem(slug, "done")
     }
 
     this.finishButton.classList.toggle('buttons__finish--done');
