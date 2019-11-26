@@ -22,6 +22,7 @@
 .text {
   margin-bottom: $gutter * 2;
   font-family: $font-main;
+  line-height: 2;
  
 }
 
@@ -39,13 +40,17 @@
 }
 
 .quote {
+  //laga þannig bakgrunnur nái út að næsta borða en
+  //texti sé samt í línu við texta fyrir ofan
   padding-top: $gutter;
   padding-bottom: $gutter;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
-  margin-bottom: 2*$gutter;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  margin-bottom: $gutter * 2;
   font-family: $font-main;
-  background-color: $color-2;
+  background-color: $color-4;
 
   &__attribute {
     font-style: italic;
