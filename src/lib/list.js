@@ -112,12 +112,12 @@ export default class List {
     const title = makeTitle(item.title, item.slug);
     titlediv.appendChild(title);
 
-    //Tjékkar ef fyrirlestur er búinn og bætir við check-merki
-    if(loadSaved().includes(item.title)) {
+    /*//Tjékkar ef fyrirlestur er búinn og bætir við check-merki
+    if(loadSaved().includes(slug)) {
       const checked = el('div', '✓');
       checked.classList.add('card__finished');
       titlecatdiv.appendChild(checked);    
-    }
+    }*/
 
   }
 

@@ -1,5 +1,5 @@
 import {empty, el} from './helpers';
-import {save, loadSaved} from './storage';
+import {save, loadSaved, remove} from './storage';
 import {makeImage, makeText, makeQuote, 
   makeHeading, makeList, makeCode, makeVideo, makeCategory, makeTitle} from './maker';
 
@@ -9,6 +9,8 @@ export default class Lectures {
     this.container = document.querySelector('.lecture');
     this.jsonfile = '../../lectures.json';
     this.header = document.querySelector('.header');
+    this.footer = document.querySelector('.footer');
+    this.finishButton = document.querySelector('.buttons__finish');
   }
 
   /*
@@ -79,14 +81,32 @@ export default class Lectures {
     } else if(item.type === 'code') {
       const codeEl = makeCode(item.data);
       codeEl.classList.add('code');
-      this.container.add('code');
+      this.container.appendChild(codeEl);
     } else if(item.type === 'youtube') {
       const videoEl = makeVideo(item.data);
       videoEl.classList.add('youtube');
       this.container.appendChild(videoEl);
     }
- 
+
   }
+
+
+  finishLecture(slug, e) {
+
+    const finished = e.target.classList.contains('buttons__finish--done');
+
+    if(finished) {
+      this.finishButton.innerHTML = 'Klára fyrirlestur';
+    } else {
+      this.finishButton.innerHTML = ' Fyrirlestur kláraður';
+    }
+
+    this.finishButton.classList.toggle('buttons__finish--done');
+    localStorage.setItem(slug, slug);
+
+  }
+
+ 
 
   /*
   * Nær í mynd og setur caption undir
@@ -126,6 +146,20 @@ export default class Lectures {
 
     this.fetchLecture(slug)
     .then(data => this.getLectures(data));
+
+    this.finishButton.addEventListener('click', this.finishLecture.bind(this, slug));
+
+    if(!(localStorage.getItem(slug) === null)) {
+      this.finishButton.classList.add('buttons__finish--done');
+    }
+
+
+
+    
+    
+
+  
+
   }
 
 
