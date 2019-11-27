@@ -6,28 +6,27 @@
     
 	  display: flex;
 	  // display: inline-block;
-	  // align-content: strech;
+
 	  flex-wrap: wrap;
+	  	  // align-content: space-between;
 }
 
 
 .thumbnail{
 	// object-fit: contain;
+
 }
 
 .card{
-max-width: 450px;
-// @media(max-width: $max-width -1) {
-// 	max-width: 30%;
-//     // padding-right: $gutter;
-//     // padding-left: $gutter;
+	// max-width: 450px;
+    padding-right: $gutter;
+    padding-left: $gutter;
 //   }
 
-//   @media(min-width: 800px) {
-//     @include columns(8);
-//     // margin-right: auto;
-//     // margin-left: auto;
-// }
+  @media(min-width: 800px) {
+	max-width: 450px;
+	flex: 0 0 33.333333%;
+}
 
 
 
