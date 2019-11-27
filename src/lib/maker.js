@@ -34,7 +34,15 @@ export function makeTitle(title, slug) {
 * Element maker fyrir text
 */
 export function makeText(text) {
-  return el('p', text);
+  const split = text.split('\n');
+  const child = split.map((text) => {
+    const textEl = el('p', text);
+    textEl.classList.add('lecture__p');
+    return textEl;
+  });
+
+  const content = el('text', ...child);
+  return content;
 }
 
 /*

@@ -8,11 +8,6 @@
   padding-right: $gutter;
   padding-left: $gutter;
 
-  //hvað er þetta?
-  @media(max-width: $max-width -1) {
-    padding-right: $gutter;
-    padding-left: $gutter;
-  }
 
   @media(min-width: 800px) {
     @include columns(8);
@@ -20,14 +15,60 @@
     padding-left: 0;
     
   }
+
+
+  &__text {
+    font-family: $font-main;
+    line-height: 2;
+    margin-bottom: $gutter;
+  }
+
+  &__p {
+    margin-bottom: $gutter;
+  }
+
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: 2rem;
+    margin-bottom: $gutter;
+    margin-top: 2*$gutter;
+  }
+
+  &__youtube {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    margin-bottom: 2*$gutter;
+
+    @include columns(12);
+
+    @media (min-width: 600px) {
+      height: 60vh;
+    }
+    @media (min-width: 800px) {
+      height: 70vh;
+    }
+  }
+
+  &__code {
+    overflow: auto;
+    @media (min-width: 800px) {
+      overflow: visible;
+    }
+  }
+
 }
 
-.text {
-  margin-bottom: $gutter * 2;
-  font-family: $font-main;
-  line-height: 2;
- 
+.list {
+  padding-left: $gutter / 2;
+  margin-bottom: 2*$gutter;
+
+  &__item {
+    margin-bottom: $gutter;
+  }
 }
+
 
 .image {
   @include columns(12);
@@ -60,46 +101,6 @@
     padding-bottom: $gutter;
   }
 
-}
-
-.heading {
-  font-family: $font-heading;
-  font-size: 2rem;
-  margin-bottom: $gutter;
-  margin-top: 2*$gutter;
-}
-
-.list {
-  padding-left: $gutter / 2;
-  margin-bottom: 2*$gutter;
-
-  &__item {
-    margin-bottom: $gutter;
-  }
-
-}
-
-.youtube {
-  display: flex;
-  justify-content: center;
-  height: 50vh;
-  margin-bottom: 2*$gutter;
-
-  @include columns(12);
-
-  @media (min-width: 600px) {
-    height: 60vh;
-  }
-  @media (min-width: 800px) {
-    height: 70vh;
-  }
-}
-
-.code {
-  overflow: auto;
-  @media (min-width: 800px) {
-    overflow: visible;
-  }
 }
 
 

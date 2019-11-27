@@ -67,24 +67,24 @@ export default class Lectures {
       this.imageItem(item);
     } else if(item.type === 'text') {
       const textEl = makeText(item.data);
-      textEl.classList.add('text');
+      textEl.classList.add('lecture__text');
       this.container.appendChild(textEl);
     } else if(item.type === 'quote') {
       const quoteEl = makeQuote(item);
       this.container.appendChild(quoteEl);
     } else if(item.type === 'heading') {
       const headingEl = makeHeading('h2', item.data);
-      headingEl.classList.add('heading');
+      headingEl.classList.add('lecture__heading');
       this.container.appendChild(headingEl);
     } else if(item.type === 'list') {
       this.listItem(item);
     } else if(item.type === 'code') {
       const codeEl = makeCode(item.data);
-      codeEl.classList.add('code');
+      codeEl.classList.add('lecture__code');
       this.container.appendChild(codeEl);
     } else if(item.type === 'youtube') {
       const videoEl = makeVideo(item.data);
-      videoEl.classList.add('youtube');
+      videoEl.classList.add('lecture__youtube');
       this.container.appendChild(videoEl);
     }
 
