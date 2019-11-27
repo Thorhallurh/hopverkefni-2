@@ -8,7 +8,7 @@ import {el} from './helpers';
 export function makeImage(image) {
   if(!image) {
     const gray = el('div');
-    gray.classList.add('gray');
+    gray.classList.add('card__gray');
     return gray;
   }
 
