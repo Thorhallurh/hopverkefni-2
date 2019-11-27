@@ -24,7 +24,7 @@ xxxx
 
 Eftirfarandi er sett upp í verkefni:
 
-.stylelintrc með upplýsingum um hvernig stylelint eigi að haga sér. Setja þarf upp stylelint-config-primer pakkann
+.stylelintrc með upplýsingum um hvernig stylelint á að hagar sér
 
 .eslintrc skrá sem segir til um hvernig lint fyrir JavaScript skrár skuli háttað
 
@@ -51,7 +51,7 @@ package.json hefur uppsett script ásamt dependencies
 
 - eslint til að keyra eslint
 
--stylelint til að keyra stylelint
+- stylelint til að keyra stylelint
 
 - test til að keyra bæði eslint og stylelint
 
@@ -65,21 +65,29 @@ package.json hefur uppsett script ásamt dependencies
 
 
 ## styles mappa
+undirmappa sem inniheldur scss kóða
+- buttons.scss
+- cards.scss
+- config..scss
+- header.scss
+- lectures.scss
+- styles.scss
 
 ## lib mappa
 undirmappa sem inniheldur JavaScript kóða
 
-helpers.js
+- helpers.js
 
-lectures.js
+- lectures.js
 
-list.js
+- list.js
 
-load.js
+- load.js
 
-maker.js
+- maker.js
 
-storage.js
+- storage.js
+
 
 ## Hópverkefni 2
 
