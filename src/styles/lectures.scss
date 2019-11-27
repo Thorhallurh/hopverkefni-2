@@ -6,6 +6,7 @@
   max-width: $max-width;
   margin: 0 auto;
 
+  //hvað er þetta?
   @media(max-width: $max-width -1) {
     padding-right: $gutter;
     padding-left: $gutter;
@@ -137,16 +138,16 @@
 
 
 .footer {
-  display: flex;
   margin-top: 3*$gutter;
   margin-bottom: 3*$gutter;
   font-family: $font-heading;
-  flex-direction: column; 
-  align-items: center; 
   text-decoration: none;
 }
 
 .buttons {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
 
   &__finish {
     display: inline block;
@@ -154,6 +155,8 @@
     font-family: $font-heading;
     font-size: 1rem;
     background: inherit;
+    margin: $gutter;
+    padding-bottom: $gutter;
 
     &--done {
       color: $color-5;

@@ -34,6 +34,18 @@
   border-radius: $gutter;
   padding: $gutter * 0.5 $gutter;
   cursor: pointer;
+  &:hover {
+    background-color: #999;
+    transition: 300ms ease-in-out;
+  }
+}
+
+.button__filter {
+	background-color: $color-5;
+	&:hover {
+		background-color: $color-6;
+		transition: 300ms ease-in-out;
+	}
 }
 
 .buttons__finish {

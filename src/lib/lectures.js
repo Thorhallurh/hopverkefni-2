@@ -81,6 +81,7 @@ export default class Lectures {
     } else if(item.type === 'code') {
       const codeEl = makeCode(item.data);
       codeEl.classList.add('code');
+      codeEl.setAttribute('')
       this.container.appendChild(codeEl);
     } else if(item.type === 'youtube') {
       const videoEl = makeVideo(item.data);

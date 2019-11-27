@@ -29,6 +29,10 @@
   position: relative;
   background-color: $color-4;
   max-width: 445px;
+  &:hover {
+    background-color: #999;
+    transition: 300ms ease-in-out;
+  }
 
   @media (min-width: 800px) {
 	flex: 0 0 30%;
@@ -38,7 +42,6 @@
 
   &__titlecat {
     max-width: 445px;
-    background-color: $color-4;
     padding: $gutter/2;
     margin: auto auto 0 0;
   }
