@@ -5,6 +5,7 @@
 	display: flex;
 	justify-content: space-between;
 
+
 	@media(min-width: 800px){
 		max-width: 600px;
 		padding-left: 25%;
@@ -22,6 +23,7 @@
     background-color: #ccc;
     border-radius: $gutter;
     padding: $gutter*0.5 $gutter;
+    cursor: pointer;
 
 }
 
