@@ -116,7 +116,7 @@ export default class List {
     if(localStorage.getItem(item.slug) == "done") {
       const checkMark = el('div', '✓');
       checkMark.classList.add('card__finished');
-      titlecatdiv.appendChild(checkMark);
+      card.appendChild(checkMark);
     }
 
   }

@@ -21,6 +21,7 @@
 	display: flex;
 	flex-flow: column;
 	height: auto;
+	position: relative;
 	background-color: $color-4;
 
     @media(min-width: 800px) {
@@ -52,8 +53,11 @@
 	}
 	&__finished{
 		position: absolute;
-		font-size: 3rem;
+		padding-right: $gutter/2;
+		font-size: 4rem;
 		color: $color-6;
 		z-index: 1;
+		right: 0;
+		bottom: 0;
 	}
 }
