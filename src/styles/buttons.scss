@@ -1,24 +1,23 @@
 @import "config";
 
 .button{
-	// max-width: $max-width;
 	padding: $gutter * 2;
 	display: flex;
 	justify-content: space-between;
 
-
-
-    //  //setja þetta þegar það se stærri útgáfan?
-	// @media(min-width: 800px) {
-	// justify-content: center;
-    
- //  }
-
+	@media(min-width: 800px){
+		max-width: 600px;
+		padding-left: 25%;
+		padding-right: 25%;
+		// justify-content: center;
+		// justify-content: space-between;
+	}
 }
 
 
 .button > * {
 	font-family: $font-heading;
+	font-weight: bold;
 	font-size: 1.5rem;
     background-color: #ccc;
     border-radius: $gutter;

@@ -6,6 +6,8 @@
     
 	  display: flex;
 	  // display: inline-block;
+	  // align-content: strech;
+	  flex-wrap: wrap;
 }
 
 
@@ -14,7 +16,7 @@
 }
 
 .card{
-
+max-width: 450px;
 // @media(max-width: $max-width -1) {
 // 	max-width: 30%;
 //     // padding-right: $gutter;
@@ -35,17 +37,20 @@
 	&__titlecat {
 		max-width: 445px;
 		background-color: $color-4;
+		margin-top: -$gutter*0.5;
 
   }
 }
 
 .category{
 	text-transform: uppercase;
+	font-weight: 300;
 	// font-size: 1rem;
 }
 
 .title{
-	font-size: 1.5rem;
+	font-size: 1rem;
+	font-weight: bold;
 	text-decoration: none;
 	color: $color-1;
 }
