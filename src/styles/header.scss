@@ -7,20 +7,13 @@
   background-size: cover;
   font-family: $font-heading;
   padding: $gutter * 4;
+  text-align: center;
 
   &__text {
-    // display: flex;
-    // max-width: $max-width;
-    // margin: 0 auto;
-    // flex-direction: column;
-    text-transform: capitalize;
-    text-align: center;
+    text-transform: uppercase;
   }
 
   &__title {
-    // margin-bottom: $gutter;
-
     font-size: 3rem;
-    text-align: center;
   }
 }

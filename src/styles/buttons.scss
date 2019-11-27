@@ -1,5 +1,24 @@
+@import "config";
+
+.button{
+	
+
+	max-width: $max-width;
+	padding: $gutter * 2;
+	display: flex;
+    // display: inline;
+    // display: inline-block;
+    justify-content: center; //Sleppa display:inline-block; ef þetta er notað??
+}
+
+
 .button > * {
+	font-family: $font-heading;
+	font-size: 1.5rem;
     background-color: #ccc;
+    border-radius: $gutter;
+    padding: $gutter*0.5 $gutter;
+
 }
 
 .buttons__finish {
