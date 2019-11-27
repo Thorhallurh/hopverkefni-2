@@ -84,7 +84,8 @@ export default class List {
   getCard(item) {
 
     //Div fyrir öll gögnin 
-    const card = el('div');
+    const card = el('a');
+    card.href = `fyrirlestur.html?slug=${item.slug}`;
     card.classList.add('card');
     this.container.appendChild(card);
 
