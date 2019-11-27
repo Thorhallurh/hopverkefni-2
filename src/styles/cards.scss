@@ -3,40 +3,30 @@
 .cards{
 	  @include columns(12);
 	  font-family: $font-heading;
-    
 	  display: flex;
-	  // display: inline-block;
-
 	  flex-wrap: wrap;
-	  	  // align-content: space-between;
 }
 
-
+	// setja bakgrunn á þá sem eru ekki með mynd þegar gluggi er stækkaður
+	// búa fyrst til class á það div sem er tómt??
+	// title og category þarf líka að fæast neðar
 .thumbnail{
-	// object-fit: contain;
-
+	//background-color: $color-4;
 }
 
 .card{
-	// max-width: 450px;
     padding-right: $gutter;
     padding-left: $gutter;
-//   }
+    padding-bottom: $gutter*2;
 
-  @media(min-width: 800px) {
-	max-width: 450px;
-	flex: 0 0 33.333333%;
-}
-
-
-
-	
-	padding-bottom: $gutter*2;
+    @media(min-width: 800px) {
+    	flex: 0 0 33.333333%;
+    }
 
 	&__titlecat {
 		max-width: 445px;
 		background-color: $color-4;
-		margin-top: -$gutter*0.5;
+		// margin-top: -$gutter*0.5;
 
   }
 }
