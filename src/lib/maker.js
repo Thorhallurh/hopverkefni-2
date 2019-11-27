@@ -7,9 +7,9 @@ import {el} from './helpers';
  */
 export function makeImage(image) {
   if(!image) {
-    return el('div');
-    // þarf að útfæra til þess að tóm div hér fái sömu stærð og
-    // hin thumbnail element, sömu stærð en einlitan bakgrunn.
+    const gray = el('div');
+    gray.classList.add('gray');
+    return gray;
   }
 
   const imageEl = el('img');
