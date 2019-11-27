@@ -1,4 +1,5 @@
-#Hópverkefni 2
+# Hópverkefni 2
+
 
 ##Hópurinn
 Andrea Rakel Sigurðardóttir - 
@@ -73,8 +74,7 @@ load.js
 maker.js
 storage.js
 
-
-# Hópverkefni 2
+##Hópverkefni 2
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
