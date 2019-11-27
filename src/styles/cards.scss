@@ -28,6 +28,7 @@
   height: auto;
   position: relative;
   background-color: $color-4;
+  transition: 300ms ease-in-out;
   max-width: 445px;
   &:hover {
     background-color: #999;
