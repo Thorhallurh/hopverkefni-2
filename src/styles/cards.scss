@@ -27,18 +27,18 @@
 		max-width: 445px;
 		background-color: $color-4;
   }
-}
 
-.category{
-	text-transform: uppercase;
-	font-weight: 300;
-}
+	&__category{
+		text-transform: uppercase;
+		font-weight: 300;
+	}
 
-.title{
-	font-size: 1rem;
-	font-weight: bold;
-	text-decoration: none;
-	color: $color-1;
+	&__title{
+		font-size: 1rem;
+		// font-weight: bold;
+		text-decoration: none;
+		color: $color-1;
+	}
 }
 
 a{
