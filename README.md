@@ -45,14 +45,14 @@ Eftirfarandi er sett upp í verkefni:
 
 `lectures.json` inniheldur data til að setja upp síðuna
 
-`package.json` hefur uppsett script ásamt dependencies
-- eslint til að keyra eslint
-- stylelint til að keyra stylelint
-- test til að keyra bæði eslint og stylelint
-- browser-sync til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
-- sass til að keyra fyrstu þýðingu
-- sass-watch til að fylgjast með sass skrám og þýða
-- dev til að keyra sass og browser-sync
+`package.json` hefur uppsett script ásamt dependencies:
+- `eslint` til að keyra eslint
+- `stylelint` til að keyra stylelint
+- `test` til að keyra bæði eslint og stylelint
+- `browser-sync` til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
+- `sass` til að keyra fyrstu þýðingu
+- `sass-watch` til að fylgjast með sass skrám og þýða
+- `dev` til að keyra sass og browser-sync
 
 `src/` mappa með
 - `styles/` [sjá skipulag að neðan]
