@@ -12,15 +12,13 @@ Slóð á verkefnið keyrandi á vefnum: xxx
 
 ## Keyrsla verkefnis
 
-Til að keyra verkefnið þarf að klóna það frá GitHub:
+`git clone https://github.com/Thorhallurh/hopverkefni-2.git` klónar verkefni frá GitHub
 
-`git clone https://github.com/Thorhallurh/hopverkefni-2.git`
+`cd hopverkefni-2` 
 
-Keyra þarf:
+`npm install` skoðar listann yfir devDependencies í package.json skránni. Þar er að finna alla nauðsynlega pakka og hlaðast þeir þá sjálfkrafa niður.
 
-`npm install` sem mun skoða listann yfir devDependencies í package.json skránni. Þar er að finna alla nauðsynlega pakka og hlaðast þeir þá sjálfkrafa niður.
-
-`npm run dev` keyrir síðan alla pakkana samtímis og opnar verkefnið í browser.
+`npm run dev` keyrir alla pakkana samtímis og opnar verkefnið í browser.
 
 
 # Uppbygging verkefnis
