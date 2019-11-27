@@ -1,9 +1,11 @@
 @import "config";
 
 .button{
+	width: 33vw;
 	padding: $gutter * 2;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: center;
 
 	@media(min-width: 800px){
 		max-width: 600px;
