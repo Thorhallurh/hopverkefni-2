@@ -100,13 +100,14 @@ export default class List {
     //Div fyrir title og flokk í sitthvoru lagi
     //víxlaði til að setja div í rétta röð upp á útlit
     const catdiv = el('div');
-    catdiv.classList.add('category');
+    catdiv.classList.add('card__category');
     titlecatdiv.appendChild(catdiv);
-    const cat = makeCategory(item.category);
+    const cat = el('h3', item.category);
+    cat.classList.add('card__h3');
     catdiv.appendChild(cat);
 
     const titlediv = el('div');
-    titlediv.classList.add('title');
+    titlediv.classList.add('card__title');
     titlecatdiv.appendChild(titlediv);
     const title = makeTitle(item.title, item.slug);
     titlediv.appendChild(title);

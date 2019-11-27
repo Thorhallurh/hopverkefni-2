@@ -30,6 +30,15 @@ img { /* stylelint-disable-line */
   max-width: 100%;
 }
 
+a{
+  color: $color-1;
+  text-decoration: none;
+}
+
+a:visited{
+  color: $color-1;
+  text-decoration: none;
+}
 
 
 // TODO import
