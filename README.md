@@ -20,7 +20,7 @@ xxxx
 
 # Uppbygging verkefnis
 
-# Skjöl verkefnis
+## Skjöl verkefnis
 
 Eftirfarandi er sett upp í verkefni:
 
@@ -43,25 +43,25 @@ src/ mappa með
   lib/ [sjá skipulag að neðan]
   index.js skrá sem vísar í lib/
 
-dist/ mappa sem ætti að innihalda þýddar sass og JavaScript skrár
+dist/ mappa sem inniheldur þýddar sass og JavaScript skrár
 
-img/ með öllum myndum sem þarf í verkefnið
+img/ myndir sem þarf í verkefnið
 
 package.json hefur uppsett script ásamt dependencies
 
-  eslint til að keyra eslint
+- eslint til að keyra eslint
 
-  stylelint til að keyra stylelint
+-stylelint til að keyra stylelint
 
-  test til að keyra bæði eslint og stylelint
+- test til að keyra bæði eslint og stylelint
 
-  browser-sync til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
+- browser-sync til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
 
-  sass til að keyra fyrstu þýðingu
+- sass til að keyra fyrstu þýðingu
 
-  sass-watch til að fylgjast með sass skrám og þýða
+- sass-watch til að fylgjast með sass skrám og þýða
 
-  dev til að keyra sass og browser-sync
+- dev til að keyra sass og browser-sync
 
 
 ## styles mappa
