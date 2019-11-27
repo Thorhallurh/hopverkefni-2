@@ -1,63 +1,73 @@
 @import "config";
 
-.cards{
-	  @include columns(12);
-	  font-family: $font-heading;
-	  display: flex;
-	  flex-wrap: wrap;
+.cards {
+  @include columns(12);
+  font-family: $font-heading;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  @media (min-width: 800px) {
+	flex-direction: row;
+  }
 }
 
-	// setja bakgrunn á þá sem eru ekki með mynd þegar gluggi er stækkaður
-	// búa fyrst til class á það div sem er tómt??
-	// title og category þarf líka að fæast neðar
-.thumbnail{
-	//background-color: $color-4;
+// setja bakgrunn á þá sem eru ekki með mynd þegar gluggi er stækkaður
+// búa fyrst til class á það div sem er tómt??
+// title og category þarf líka að fæast neðar
+.thumbnail {
+  //background-color: $color-4;
 }
 
-.card{
-    margin-right: $gutter/2;
-    margin-left: $gutter/2;
-	margin-bottom: $gutter;
-	display: flex;
-	flex-flow: column;
-	height: auto;
-	position: relative;
-	background-color: $color-4;
+.card {
+  margin-right: $gutter/2;
+  margin-left: $gutter/2;
+  margin-bottom: $gutter;
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  position: relative;
+  background-color: $color-4;
+  max-width: 445px;
 
-    @media(min-width: 800px) {
-    	flex: 0 0 30%;
+  @media (min-width: 800px) {
+	flex: 0 0 30%;
+	margin-right: $gutter/2;
+	margin-left: $gutter/2;
+  }
+
+  &__titlecat {
+    max-width: 445px;
+    background-color: $color-4;
+    padding: $gutter/2;
+    margin: auto auto 0 0;
+  }
+
+  &__grey {
+    @media (min-width: 800px) {
+      background: $color-4;
+      height: auto;
     }
+  }
 
-	&__titlecat {
-		max-width: 445px;
-		background-color: $color-4;
-		padding: $gutter/2;
-		margin: auto auto 0 0;
-	}
+  &__h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
 
-	&__grey{
-		background: $color-4;
-		height: auto;
-	}
-
-	&__h3{
-		text-transform: uppercase;
-		font-weight: 300;
-	}	
-
-	&__title{
-		font-size: 1rem;
-		// font-weight: bold;
-		text-decoration: none;
-		color: $color-1;
-	}
-	&__finished{
-		position: absolute;
-		padding-right: $gutter/2;
-		font-size: 4rem;
-		color: $color-6;
-		z-index: 1;
-		right: 0;
-		bottom: 0;
-	}
+  &__title {
+    font-size: 1rem;
+    // font-weight: bold;
+    text-decoration: none;
+    color: $color-1;
+  }
+  &__finished {
+    position: absolute;
+    padding-right: $gutter/2;
+    font-size: 4rem;
+    color: $color-6;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+  }
 }

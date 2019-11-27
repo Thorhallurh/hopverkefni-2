@@ -1,49 +1,47 @@
 @import "config";
 
-.button{
-	margin: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-bottom: $gutter;
+.button {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: $gutter;
 
-
-	@media(min-width: 800px){
-		// max-width: 600px;
-		// padding-left: 25%;
-		// padding-right: 25%;
-		// justify-content: center;
-		// justify-content: space-between;
-	}
+  @media (min-width: 800px) {
+    // max-width: 600px;
+    // padding-left: 25%;
+    // padding-right: 25%;
+    // justify-content: center;
+    // justify-content: space-between;
+  }
 }
 
 .button__menu {
-	margin: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (min-width: 800px) {
+  }
 }
 
-
 .button__menu > * {
-	font-family: $font-heading;
-	margin: $gutter;
-	font-weight: bold;
-	font-size: 1.5rem;
-    background-color: #ccc;
-    border-radius: $gutter;
-	padding: $gutter*0.5 $gutter;
-	cursor: pointer;
-
+  font-family: $font-heading;
+  margin: $gutter/2;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #ccc;
+  border-radius: $gutter;
+  padding: $gutter * 0.5 $gutter;
+  cursor: pointer;
 }
 
 .buttons__finish {
-    padding: 0;
-    border: none;
-    background: none;
-    &--done {
-        color: #1a1;
-	}
-	cursor: pointer;
-
+  padding: 0;
+  border: none;
+  background: none;
+  &--done {
+    color: #1a1;
+  }
+  cursor: pointer;
 }
