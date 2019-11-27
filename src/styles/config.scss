@@ -19,12 +19,4 @@ $font-heading: 'Roboto Mono', monospace;
 @mixin columns($col: 1) {
     // margföldum með 1% til að breyta gildi í % gildi
     width: ($col /12 * 100) * 1%;
-    // þetta setur padding á lecture main, það viljum við ekki
-    // padding-right: $gutter/2;
-    // padding-left: $gutter/2;
-}
-
-
-div {
-
 }

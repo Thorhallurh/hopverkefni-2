@@ -5,6 +5,8 @@
 
   max-width: $max-width;
   margin: 0 auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
 
   //hvað er þetta?
   @media(max-width: $max-width -1) {
@@ -14,8 +16,8 @@
 
   @media(min-width: 800px) {
     @include columns(8);
-    margin-right: auto;
-    margin-left: auto;
+    padding-right: 0;
+    padding-left: 0;
     
   }
 }
@@ -28,7 +30,6 @@
 }
 
 .image {
-
   @include columns(12);
 
   &__caption {
@@ -41,8 +42,6 @@
 }
 
 .quote {
-  //laga þannig bakgrunnur nái út að næsta borða en
-  //texti sé samt í línu við texta fyrir ofan
   padding-top: $gutter;
   padding-bottom: $gutter;
   padding-left: $gutter;
@@ -96,6 +95,13 @@
   }
 }
 
+.code {
+  overflow: auto;
+  @media (min-width: 800px) {
+    overflow: visible;
+  }
+}
+
 
 //Mögulega hægt að benda bara á header.scss
 .lectHeader {
@@ -136,7 +142,6 @@
   }
 }
 
-
 .footer {
   margin-top: 3*$gutter;
   margin-bottom: 3*$gutter;
@@ -144,32 +149,19 @@
   text-decoration: none;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-
-  &__finish {
-    display: inline block;
-    border: none;
-    font-family: $font-heading;
-    font-size: 1rem;
-    background: inherit;
-    margin: $gutter;
-    padding-bottom: $gutter;
-
-    &--done {
-      color: $color-5;
-    }
-
-  }
-
-  &__back {
-    text-decoration: none;
-    color: $color-1;
-  }
-
-
-
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $color-3; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-2; 
+  border-radius: 10px;
+}

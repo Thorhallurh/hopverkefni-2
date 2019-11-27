@@ -12,13 +12,6 @@
   }
 }
 
-// setja bakgrunn á þá sem eru ekki með mynd þegar gluggi er stækkaður
-// búa fyrst til class á það div sem er tómt??
-// title og category þarf líka að fæast neðar
-.thumbnail {
-  //background-color: $color-4;
-}
-
 .card {
   margin-right: $gutter/2;
   margin-left: $gutter/2;
@@ -29,7 +22,7 @@
   position: relative;
   background-color: $color-4;
   transition: 300ms ease-in-out;
-  max-width: 445px;
+  max-width: 100vw;
   &:hover {
     background-color: #999;
     transition: 300ms ease-in-out;
@@ -39,10 +32,11 @@
 	flex: 0 0 30%;
 	margin-right: $gutter/2;
 	margin-left: $gutter/2;
+	max-width: 33vw;
   }
 
   &__titlecat {
-    max-width: 445px;
+    max-width: 33vw;
     padding: $gutter/2;
     margin: auto auto 0 0;
   }
@@ -61,7 +55,6 @@
 
   &__title {
     font-size: 1rem;
-    // font-weight: bold;
     text-decoration: none;
     color: $color-1;
   }
