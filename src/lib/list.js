@@ -1,6 +1,6 @@
 
 import { empty, el, clicked} from './helpers';
-import { makeImage, makeTitle, makeCategory } from './maker';
+import { makeImage, makeTitle } from './maker';
 
 const filters = [];
 

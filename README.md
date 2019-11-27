@@ -79,12 +79,11 @@ Undirmappa sem inniheldur scss kóða
 ## lib mappa
 Undirmappa sem inniheldur JavaScript kóða
 
-- `helpers.js`
-- `lectures.js`
-- `list.js`
-- `load.js`
-- `maker.js`
-- `storage.js`
+- `helpers.js` - almenn hjálparföll sem víða er kallað á; ýmist til þess að búa til almenn element, fjarlægja element eða stilla eventListeners fyrir föll á forsíðu sem tengjast ekki því að hlaða henni inn.
+- `lectures.js` - skrá sem heldur utan um þær aðgerðir sem snúa að því að hlaða fyrirlestrasíðum, ásamt eventListeners fyrir hnappana neðst og aðgerð sem skráir kláraðar síður í local storage.
+- `list.js` - skrá sem heldur utan um aðgerðirnar sem hlaða upp forsíðu verkefnisins. Aðgerðirnar hafa if-setningar sem skoða hvort einhverjir fyrirlestrar hafi verið vistaðir af fyrirlestrarsíðum - og bætir þá við grænum haka - og sömuleiðis hvort einhverjir hnappanna hafi verið valdir, sem sía niðurstöður eftir efni.
+- `maker.js` - skrá sem heldur utan um öll föll sem snúa að því að búa til sértæk element; bæði þau sem birtast á forsíðu og fyrirlestrarsíðu. Þau föll styðjast við þau almennu úr helpers.js en eru flóknari og því geymd í sérskrá.
+- `index.js` - fyrsta skráin sem er keyrð þegar verkefninu er hlaðið. Bíður þar til DOM-tré síðunnar er tilbúið og skoðar með if-setningu hvort um forsíðu eða fyrirlestur sé að ræða. Eftir því keyrir síðan annað af tveimur aðalföllum sem kalla á aðgerðir úr list.js eða lectures.js til þess að hlaða upp viðeigandi síðu.
 
 
 

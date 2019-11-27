@@ -53,11 +53,6 @@ export function el(name, ...children) {
     return element;
   }
 
-// hjálparfall til að opna fyrirlestrarsíður
-function openLink(slug) {
-  console.log(slug);
-}
-
 export function clicked(e) {
   let button = e.target;
   if(button.classList.contains('button__filter')) {
