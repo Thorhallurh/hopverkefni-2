@@ -102,7 +102,8 @@ export default class List {
     const catdiv = el('div');
     catdiv.classList.add('card__category');
     titlecatdiv.appendChild(catdiv);
-    const cat = makeCategory(item.category);
+    const cat = el('h3', item.category);
+    cat.classList.add('card__h3');
     catdiv.appendChild(cat);
 
     const titlediv = el('div');
