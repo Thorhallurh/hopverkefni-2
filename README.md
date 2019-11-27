@@ -1,13 +1,14 @@
 # Hópverkefni 2
 
 ## Hópurinn
+Andrea Rakel Sigurðardóttir - ars59@hi.is, andrearakel
 
-##Hópurinn
-Andrea Rakel Sigurðardóttir - 
 Ragnhildur Þórarinsdóttir - rth53@hi.is, ragnth, 866-3290
+
 Þórahallur Auður Helgason - thh114@hi.is, Thorhallurh, 615-4545
 
-##Keyrsla verkefnis
+## Keyrsla verkefnis
+
 Til að keyra verkefnið þarf að klóna það frá GitHub:
 
 git clone https://github.com/Thorhallurh/hopverkefni-2.git
@@ -17,9 +18,9 @@ Setja þarf upp:
 xxxx
 
 
-#Uppbygging verkefnis
+# Uppbygging verkefnis
 
-#Skjöl verkefnis
+# Skjöl verkefnis
 
 Eftirfarandi er sett upp í verkefni:
 
@@ -69,13 +70,18 @@ package.json hefur uppsett script ásamt dependencies
 undirmappa sem inniheldur JavaScript kóða
 
 helpers.js
+
 lectures.js
+
 list.js
+
 load.js
+
 maker.js
+
 storage.js
 
-##Hópverkefni 2
+## Hópverkefni 2
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
