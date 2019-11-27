@@ -1,3 +1,79 @@
+#Hópverkefni 2
+
+##Hópurinn
+Andrea Rakel Sigurðardóttir - 
+Ragnhildur Þórarinsdóttir - rth53@hi.is, ragnth, 866-3290
+Þórahallur Auður Helgason - thh114@hi.is, Thorhallurh, 615-4545
+
+##Keyrsla verkefnis
+Til að keyra verkefnið þarf að klóna það frá GitHub:
+
+git clone https://github.com/Thorhallurh/hopverkefni-2.git
+
+Setja þarf upp:
+
+xxxx
+
+
+#Uppbygging verkefnis
+
+#Skjöl verkefnis
+
+Eftirfarandi er sett upp í verkefni:
+
+.stylelintrc með upplýsingum um hvernig stylelint eigi að haga sér. Setja þarf upp stylelint-config-primer pakkann
+
+.eslintrc skrá sem segir til um hvernig lint fyrir JavaScript skrár skuli háttað
+
+.gitignore sem hunsar algengar skrár
+
+./dist - allt hunsað sem þýðir að það verður ekki checkað inn. Það er gert vegna þess að þær skrár eru útbúnar af tólum þegar verkefni er keyrt.
+
+.gitattributes sem kemur í veg fyrir ósamræmi sem geta komið upp þegar unnið er á milli stýrikerfa
+
+.editorconfig sem samræmir notkun á tabs og spaces, bilum og fleira
+
+grid.css til að sjá grid sem fyrirmynd er unnin eftir
+
+src/ mappa með
+  styles/ [sjá skipulag að neðan]
+  lib/ [sjá skipulag að neðan]
+  index.js skrá sem vísar í lib/
+
+dist/ mappa sem ætti að innihalda þýddar sass og JavaScript skrár
+
+img/ með öllum myndum sem þarf í verkefnið
+
+package.json hefur uppsett script ásamt dependencies
+
+  eslint til að keyra eslint
+
+  stylelint til að keyra stylelint
+
+  test til að keyra bæði eslint og stylelint
+
+  browser-sync til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
+
+  sass til að keyra fyrstu þýðingu
+
+  sass-watch til að fylgjast með sass skrám og þýða
+
+  dev til að keyra sass og browser-sync
+
+
+## styles mappa
+
+## lib mappa
+undirmappa sem inniheldur JavaScript kóða
+
+helpers.js
+lectures.js
+list.js
+load.js
+maker.js
+storage.js
+
+
 # Hópverkefni 2
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
