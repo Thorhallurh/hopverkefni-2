@@ -1,0 +1,61 @@
+@import "config";
+
+.cards{
+	  @include columns(12);
+	  font-family: $font-heading;
+    
+	  display: flex;
+	  // display: inline-block;
+}
+
+
+.thumbnail{
+	// object-fit: contain;
+}
+
+.card{
+
+// @media(max-width: $max-width -1) {
+// 	max-width: 30%;
+//     // padding-right: $gutter;
+//     // padding-left: $gutter;
+//   }
+
+//   @media(min-width: 800px) {
+//     @include columns(8);
+//     // margin-right: auto;
+//     // margin-left: auto;
+// }
+
+
+
+	
+	padding-bottom: $gutter*2;
+
+	&__titlecat {
+		max-width: 445px;
+		background-color: $color-4;
+
+  }
+}
+
+.category{
+	text-transform: uppercase;
+	// font-size: 1rem;
+}
+
+.title{
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: $color-1;
+}
+
+a{
+	color: $color-1;
+	text-decoration: none;
+}
+
+a:visited{
+	color: $color-1;
+	text-decoration: none;
+}

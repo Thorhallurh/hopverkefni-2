@@ -1,14 +1,19 @@
 @import "config";
 
 .button{
-	
-
-	max-width: $max-width;
+	// max-width: $max-width;
 	padding: $gutter * 2;
 	display: flex;
-    // display: inline;
-    // display: inline-block;
-    justify-content: center; //Sleppa display:inline-block; ef þetta er notað??
+	justify-content: space-between;
+
+
+
+    //  //setja þetta þegar það se stærri útgáfan?
+	// @media(min-width: 800px) {
+	// justify-content: center;
+    
+ //  }
+
 }
 
 
