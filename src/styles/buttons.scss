@@ -1,25 +1,33 @@
 @import "config";
 
 .button{
-	width: 33vw;
-	padding: $gutter * 2;
+	margin: auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	margin-bottom: $gutter;
 
 
 	@media(min-width: 800px){
-		max-width: 600px;
-		padding-left: 25%;
-		padding-right: 25%;
+		// max-width: 600px;
+		// padding-left: 25%;
+		// padding-right: 25%;
 		// justify-content: center;
 		// justify-content: space-between;
 	}
 }
 
+.button__menu {
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 
-.button > * {
+
+.button__menu > * {
 	font-family: $font-heading;
+	margin: $gutter;
 	font-weight: bold;
 	font-size: 1.5rem;
     background-color: #ccc;
