@@ -1,13 +1,27 @@
 @import "config";
 
 .header {
+  position: relative;
   margin-bottom: $gutter * 2;
-  background-image: url('/./img/header.jpg');
+  background-image: url("/./img/header.jpg");
   // background-color: $color-2;
   background-size: cover;
   font-family: $font-heading;
+  height: 50vh;
   padding: $gutter * 4;
   text-align: center;
+
+  &__protection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
 
   &__text {
     text-transform: uppercase;
@@ -17,3 +31,5 @@
     font-size: 3rem;
   }
 }
+
+

@@ -30,22 +30,22 @@ export default class Lectures {
         }
 
 
-        //Header
-        const headerCat = makeCategory(picked.category);
-        headerCat.classList.add('lectHeader__category');
-        const headerTitle = el('h2', picked.title);
-        headerTitle.classList.add('lectHeader__title');
-        const headerContent = el('div', headerCat, headerTitle);
-        headerContent.classList.add('lectHeader__content');
-        this.header.appendChild(headerContent);
+         //Header
+         const headerCat = makeCategory(picked.category);
+         headerCat.classList.add('lectHeader__category');
+         const headerTitle = el('h2', picked.title);
+         headerTitle.classList.add('lectHeader__title');
+         const headerContent = el('div', headerCat, headerTitle);
+         headerContent.classList.add('lectHeader__content');
+         this.header.appendChild(headerContent);
 
-        if(picked.image) {
-          this.header.style.backgroundImage = `url(${picked.image})`;
-        }
+         if(picked.image) {
+           this.header.style.backgroundImage = `url(${picked.image})`;
+         }
 
-        return picked;
+         return picked;
 
-      });
+       });
 
   }
 
@@ -157,15 +157,7 @@ export default class Lectures {
        this.finishButton.innerHTML = '✓ Fyrirlestur kláraður';
      }
 
-
-
-    
-    
-
-  
-
   }
-
 
 }
 

@@ -98,19 +98,27 @@
 
 //Mögulega hægt að benda bara á header.scss
 .lectHeader {
+  position: relative;
   margin-bottom: $gutter * 2;
   background-color: $color-1;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50vh;
 
   &__content {    
     display: flex;
     justify-content: center;
-    max-width: $max-width;
-    margin: 0 auto;
     flex-direction: column;
+    position: absolute;
     text-align: center;
-    height: 50vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.6);
   }
 
   &__title {
