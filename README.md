@@ -1,6 +1,6 @@
 # Hópverkefni 2
 
-##Hópurinn
+## Hópurinn
 
 ##Hópurinn
 Andrea Rakel Sigurðardóttir - 
