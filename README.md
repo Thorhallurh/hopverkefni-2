@@ -1,17 +1,17 @@
 # Hópverkefni 2
 
 ## Hópurinn
-Andrea Rakel Sigurðardóttir - ars59@hi.is, andrearakel
+Andrea Rakel Sigurðardóttir - ars59@hi.is, `andrearakel`
 
-Ragnhildur Þórarinsdóttir - rth53@hi.is, ragnth, 866-3290
+Ragnhildur Þórarinsdóttir - rth53@hi.is, `ragnth`, 866-3290
 
-Þórahallur Auður Helgason - thh114@hi.is, Thorhallurh, 615-4545
+Þórahallur Auður Helgason - thh114@hi.is, `Thorhallurh`, 615-4545
 
 ## Keyrsla verkefnis
 
 Til að keyra verkefnið þarf að klóna það frá GitHub:
 
-git clone https://github.com/Thorhallurh/hopverkefni-2.git
+`git clone https://github.com/Thorhallurh/hopverkefni-2.git`
 
 Setja þarf upp:
 
@@ -21,72 +21,68 @@ xxxx
 # Uppbygging verkefnis
 
 ## Skjöl verkefnis
-
 Eftirfarandi er sett upp í verkefni:
 
-.stylelintrc með upplýsingum um hvernig stylelint á að hagar sér
+`.stylelintrc` með upplýsingum um hvernig stylelint á að hagar sér
 
-.eslintrc skrá sem segir til um hvernig lint fyrir JavaScript skrár skuli háttað
+`.eslintrc` skrá sem segir til um hvernig lint fyrir JavaScript skrár skuli háttað
 
-.gitignore sem hunsar algengar skrár
+`.gitignore` sem hunsar algengar skrár
 
-./dist - allt hunsað sem þýðir að það verður ekki checkað inn. Það er gert vegna þess að þær skrár eru útbúnar af tólum þegar verkefni er keyrt.
+`.gitattributes` sem kemur í veg fyrir ósamræmi sem geta komið upp þegar unnið er á milli stýrikerfa
 
-.gitattributes sem kemur í veg fyrir ósamræmi sem geta komið upp þegar unnið er á milli stýrikerfa
+`.editorconfig` sem samræmir notkun á tabs og spaces, bilum og fleira
 
-.editorconfig sem samræmir notkun á tabs og spaces, bilum og fleira
+`dist/` mappa sem inniheldur þýddar sass og JavaScript skrár
 
-grid.css til að sjá grid sem fyrirmynd er unnin eftir
+`fyrirlestur.html` inniheldur html fyrir fyrirlestrasíður
 
-src/ mappa með
-  styles/ [sjá skipulag að neðan]
-  lib/ [sjá skipulag að neðan]
-  index.js skrá sem vísar í lib/
+`grid.css` til að sjá grid sem fyrirmynd er unnin eftir
 
-dist/ mappa sem inniheldur þýddar sass og JavaScript skrár
+`img/` myndir sem þarf í verkefnið
 
-img/ myndir sem þarf í verkefnið
+`index.html` inniheldur html fyrir forsíðu/síðu með yfirliti fyrirlestra
 
-package.json hefur uppsett script ásamt dependencies
+`lectures.json` inniheldur data til að setja upp síðuna
 
+`package.json` hefur uppsett script ásamt dependencies
 - eslint til að keyra eslint
-
 - stylelint til að keyra stylelint
-
 - test til að keyra bæði eslint og stylelint
-
 - browser-sync til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
-
 - sass til að keyra fyrstu þýðingu
-
 - sass-watch til að fylgjast með sass skrám og þýða
-
 - dev til að keyra sass og browser-sync
 
+`src/` mappa með
+- `styles/` [sjá skipulag að neðan]
+- `lib/` [sjá skipulag að neðan]
+- `index.js` skrá sem vísar í `lib/`
+
+`utlit` geymir myndir af fyrirmyndaútliti
 
 ## styles mappa
-undirmappa sem inniheldur scss kóða
-- buttons.scss
-- cards.scss
-- config..scss
-- header.scss
-- lectures.scss
-- styles.scss
+Undirmappa sem inniheldur scss kóða
+
+- `buttons.scss` - útlit á tökkum á index
+- `cards.scss` - útlit á meginmáli á index
+- `config.scss` - breytur sem eru mikið notaðar
+- `header.scss` - útlit á header á index
+- `lectures.scss` - útlit á lectures síðum
+- `styles.scss` - útlit, notar @import til að sækja útlit í hin skjölin
 
 ## lib mappa
-undirmappa sem inniheldur JavaScript kóða
+Undirmappa sem inniheldur JavaScript kóða
 
-- helpers.js
+- `helpers.js`
+- `lectures.js`
+- `list.js`
+- `load.js`
+- `maker.js`
+- `storage.js`
 
-- lectures.js
 
-- list.js
 
-- load.js
-
-- maker.js
-
-- storage.js
 
 
 ## Hópverkefni 2
