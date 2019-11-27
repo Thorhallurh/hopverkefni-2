@@ -2,8 +2,11 @@
 
 .header {
   margin-bottom: $gutter * 2;
-  background-color: $color-2;
+  background-image: url('/./img/header.jpg');
+  // background-color: $color-2;
+  background-size: cover;
   font-family: $font-heading;
+  padding: $gutter * 4;
 
   &__text {
     // display: flex;
@@ -17,8 +20,7 @@
   &__title {
     // margin-bottom: $gutter;
 
-    font-size: 3.75rem;
-    // font-weight: 600;
+    font-size: 3rem;
     text-align: center;
   }
 }
