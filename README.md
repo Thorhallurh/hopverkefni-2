@@ -7,15 +7,20 @@ Ragnhildur Þórarinsdóttir - rth53@hi.is, `ragnth`, 866-3290
 
 Þórahallur Auður Helgason - thh114@hi.is, `Thorhallurh`, 615-4545
 
+## Slóð á verkefni
+Slóð á verkefnið keyrandi á vefnum: xxx
+
 ## Keyrsla verkefnis
 
 Til að keyra verkefnið þarf að klóna það frá GitHub:
 
 `git clone https://github.com/Thorhallurh/hopverkefni-2.git`
 
-Setja þarf upp:
+Keyra þarf:
 
-xxxx
+`npm install` sem mun skoða listann yfir devDependencies í package.json skránni. Þar er að finna alla nauðsynlega pakka og hlaðast þeir þá sjálfkrafa niður.
+
+`npm run dev` keyrir síðan alla pakkana samtímis og opnar verkefnið í browser.
 
 
 # Uppbygging verkefnis
@@ -54,7 +59,9 @@ Eftirfarandi er sett upp í verkefni:
 - `sass-watch` til að fylgjast með sass skrám og þýða
 - `dev` til að keyra sass og browser-sync
 
-`src/` mappa með
+`package-lock.json` inniheldur læstar upplýsingar fyrir þá pakka sem verkefnið styðst við til að samræma milli keyrslna.
+
+`src/` mappa með:
 - `styles/` [sjá skipulag að neðan]
 - `lib/` [sjá skipulag að neðan]
 - `index.js` skrá sem vísar í `lib/`
@@ -80,8 +87,6 @@ Undirmappa sem inniheldur JavaScript kóða
 - `load.js`
 - `maker.js`
 - `storage.js`
-
-
 
 
 
