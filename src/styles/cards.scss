@@ -3,12 +3,12 @@
 .cards {
   @include columns(12);
   display: flex;
+  padding-right: $gutter;
+  padding-left: $gutter;
   font-family: $font-heading;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
-  padding-right: $gutter;
-  padding-left: $gutter;
   @media (min-width: 800px) {
     flex-direction: row;
     justify-content: space-between;
