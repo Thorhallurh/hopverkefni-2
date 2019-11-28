@@ -8,7 +8,7 @@ Ragnhildur Þórarinsdóttir - rth53@hi.is, `ragnth`, 866-3290
 Þórahallur Auður Helgason - thh114@hi.is, `Thorhallurh`, 615-4545
 
 ## Slóð á verkefni
-Slóð á verkefnið keyrandi á vefnum: xxx
+Slóð á verkefnið keyrandi á vefnum: https://notendur.hi.is/~thh114/vefforritun/hopverkefni2/index.html
 
 ## Keyrsla verkefnis
 
