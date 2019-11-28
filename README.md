@@ -18,7 +18,7 @@ Slóð á verkefnið keyrandi á vefnum: https://notendur.hi.is/~thh114/vefforri
 
 `npm install` skoðar listann yfir devDependencies í package.json skránni. Þar er að finna alla nauðsynlega pakka og hlaðast þeir þá sjálfkrafa niður.
 
-`npm run dev` keyrir sass-watch, rollup-watch (þar með talið babel-plugin) og browser-sync pakka samtímis og opnar verkefnið í vafra. Uppfærir breytingar á .html, .scss og .js skrám jafnóðum í vafra.
+`npm run dev` keyrir sass, sass-watch, rollup-watch (þar með talið babel-plugin) og browser-sync pakka samtímis og opnar verkefnið í vafra. Uppfærir breytingar á .html, .scss og .js skrám jafnóðum í vafra eftir að þær eru vistaðar.
 
 
 
@@ -32,13 +32,13 @@ Eftirfarandi er sett upp í verkefni:
 
 `.eslintrc` skrá sem segir til um hvernig lint fyrir JavaScript skrár skuli háttað
 
-`.gitignore` sem hunsar algengar skrár
+`.gitignore` sem hunsar skrár við git push, ýmist vegna stærðar, óþarfa eða vegna þess að verkefnið á sjálft að búa til skrárnar
 
 `.gitattributes` sem kemur í veg fyrir ósamræmi sem geta komið upp þegar unnið er á milli stýrikerfa
 
 `.editorconfig` sem samræmir notkun á tabs og spaces, bilum og fleira
 
-`dist/` mappa sem inniheldur þýddar sass og JavaScript skrár
+`dist/` mappa sem er ekki til strax en er búin til við keyrslu `npm run dev` og inniheldur þýddar sass og JavaScript skrár
 
 `fyrirlestur.html` inniheldur html fyrir fyrirlestrasíður
 
@@ -48,7 +48,7 @@ Eftirfarandi er sett upp í verkefni:
 
 `index.html` inniheldur html fyrir forsíðu/síðu með yfirliti fyrirlestra
 
-`lectures.json` inniheldur data til að setja upp síðuna
+`lectures.json` inniheldur gögn til að setja upp síðuna
 
 `package.json` hefur uppsett script ásamt dependencies:
 - `eslint` til að keyra eslint
@@ -57,9 +57,12 @@ Eftirfarandi er sett upp í verkefni:
 - `browser-sync` til að keyra verkefni, bæta þarf við skrám sem vaktaðar eru
 - `sass` til að keyra fyrstu þýðingu
 - `sass-watch` til að fylgjast með sass skrám og þýða
+- `rollup` til að pakka .js skrám úr src möppu saman í eina bundle.js skrá í dist möppu. Rollup notar einnig plug-in sem tengir það við babel og keyrir sjálfkrafa með.
+- `rollup-watch` til að keyra fygjast með .js skrám og þýða með rollup jafnóðum og þær eru vistaðar
+- `babel` til að þýða kóðann yfir á staðlaðan ECMAScript kóða sem er almennari og nær til breiðari markhóps notenda. Parametrar markhópsins eru skilgreindir í rollup.config.js, þar sem babel keyrir samhliða rollup í gegnum plug-in.- `babel-watch` til að keyra fygjast með .js skrám og þýða með babel jafnóðum og þær eru vistaðar
 - `dev` til að keyra sass og browser-sync
 
-`package-lock.json` inniheldur læstar upplýsingar fyrir þá pakka sem verkefnið styðst við til að samræma milli keyrslna.
+`package-lock.json` inniheldur sniðmátsupplýsingar fyrir þá pakka sem verkefnið styðst við. Upplýsingar um útgáfu, parametra og virkni auðvelda samræmi milli keyrslna ólíkra notenda.
 
 `src/` mappa með:
 - `styles/` [sjá skipulag að neðan]
@@ -71,7 +74,7 @@ Eftirfarandi er sett upp í verkefni:
 ## styles mappa
 Undirmappa sem inniheldur scss kóða
 
-- `buttons.scss` - útlit á tökkum á index
+- `buttons.scss` - útlit á tökkum á index og neðst á lectures siðum
 - `cards.scss` - útlit á meginmáli á index
 - `config.scss` - breytur sem eru mikið notaðar
 - `header.scss` - útlit á header á index
