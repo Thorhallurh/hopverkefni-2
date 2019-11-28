@@ -6,7 +6,7 @@ import {
 export default class Lectures {
   constructor() {
     this.container = document.querySelector('.lecture');
-    this.jsonfile = '../../lectures.json';
+    this.jsonfile = './lectures.json';
     this.header = document.querySelector('.lectHeader');
     this.footer = document.querySelector('.footer');
     this.finishButton = document.querySelector('.buttons__finish');

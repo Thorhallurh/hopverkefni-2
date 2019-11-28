@@ -7,7 +7,7 @@ const filters = [];
 export default class List {
   constructor() {
     this.container = document.querySelector('.cards');
-    this.jsonfile = '../../lectures.json';
+    this.jsonfile = './lectures.json';
   }
 
   load() {
@@ -81,7 +81,9 @@ export default class List {
   getCard(item) {
     // Div fyrir öll gögnin
     const card = el('a');
-    card.href = `fyrirlestur.html?slug=${item.slug}`;
+    const addOnURL = `fyrirlestur.html?slug=${item.slug}`;
+    const currentURL = window.location.href;
+    card.href = currentURL.replace("index.html", addOnURL);
     card.classList.add('card');
     this.container.appendChild(card);
 
