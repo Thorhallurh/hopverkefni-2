@@ -34,8 +34,8 @@ export function makeTitle(title, slug) {
 */
 export function makeText(text) {
   const split = text.split('\n');
-  const child = split.map((text) => {
-    const textEl = el('p', text);
+  const child = split.map((paragraph) => {
+    const textEl = el('p', paragraph);
     textEl.classList.add('lecture__p');
     return textEl;
   });

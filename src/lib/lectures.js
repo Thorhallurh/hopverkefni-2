@@ -51,7 +51,8 @@ export default class Lectures {
   */
   getLectures(data) {
     data.content.map((item) => {
-      this.createLecture(item);
+      const lectureMap = this.createLecture(item);
+      return lectureMap;
     });
   }
 
@@ -118,7 +119,7 @@ export default class Lectures {
     const listEl = el('ul');
     listEl.classList.add('list');
 
-    for (let i = 0; i < item.data.length; i++) {
+    for (let i = 0; i < item.data.length; i += 1) {
       const lItem = makeList(item.data[i]);
       lItem.classList.add('list__item');
       listEl.appendChild(lItem);

@@ -47,7 +47,7 @@
   flex-direction: column;
 
   &__finish {
-    margin-bottom: $gutter * 2;
+    margin: 0 auto $gutter * 2 auto;
     font: inherit;
     cursor: pointer;
     background: none;

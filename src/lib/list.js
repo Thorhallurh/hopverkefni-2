@@ -53,9 +53,10 @@ export default class List {
         return response.json();
       })
       .then((data) => {
-        let lectures = data[Object.keys(data)[0]];
-        let filteredLectures = lectures.filter(function(value){
-          return filters.indexOf(value.category) !== -1;
+        const lectures = data[Object.keys(data)[0]];
+        const filteredLectures = lectures.filter((value) => {
+          const chosenLect = (filters.indexOf(value.category) !== -1);
+          return chosenLect;
         });
         if (filters.length === 0) {
           empty(this.container);

@@ -32,10 +32,9 @@ export function el(name, ...children) {
 }
 
 // hjálparfall til að útbúa cards-element
-export function elCard(title, category, thumbnail, slug) {
+export function elCard(title, category, thumbnail) {
   const element = document.createElement(div);
   element.classList.add('list__card');
-  element.addEventListener('click', openLink(slug));
   childTitle = document.createTextNode(p);
   childTitle.classList.add('title');
   childTitle.textContent = title;
@@ -44,7 +43,7 @@ export function elCard(title, category, thumbnail, slug) {
   childCat.textContent = category;
   childThumb = document.createElement(img);
   childCat.classList.add('thumbnail');
-  setAttribute.childThumb('src', '/img/' + thumbnail);
+  setAttribute.childThumb('src', `/img/${thumbnail}`);
   element.appendChild(ChildThumb);
   element.appendChild(ChildCat);
   element.appendChild(ChildTitle);
@@ -53,11 +52,10 @@ export function elCard(title, category, thumbnail, slug) {
 }
 
 export function clicked(e) {
-  let button = e.target;
+  const button = e.target;
   if (button.classList.contains('button__filter')) {
     button.classList.remove('button__filter');
-  }
-  else {
+  } else {
     button.classList.add('button__filter');
   }
 }
