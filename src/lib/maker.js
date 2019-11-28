@@ -60,7 +60,7 @@ export function makeQuote(quote) {
   const quoteText = makeText(quote.data);
   quoteText.classList.add('quote__data');
 
-  const quoteAtt = makeText(quote.attribute);
+  const quoteAtt = el('p', quote.attribute);
   quoteAtt.classList.add('quote__attribute');
 
   quoteEl.appendChild(quoteText);
