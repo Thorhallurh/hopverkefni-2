@@ -30,17 +30,16 @@ img { /* stylelint-disable-line */
   max-width: 100%;
 }
 
-a{
+a { /* stylelint-disable-line */
   color: $color-1;
   text-decoration: none;
 }
 
-a:visited{
+a:visited { /* stylelint-disable-line */
   color: $color-1;
   text-decoration: none;
 }
 
-// TODO import
 @import "buttons.scss";
 @import "cards";
 @import "header";

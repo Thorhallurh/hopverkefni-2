@@ -2,37 +2,38 @@
 
 .cards {
   @include columns(12);
-  font-family: $font-heading;
   display: flex;
+  font-family: $font-heading;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
   @media (min-width: 800px) {
-	flex-direction: row;
+    flex-direction: row;
   }
 }
 
 .card {
-  margin-right: $gutter/2;
-  margin-left: $gutter/2;
-  margin-bottom: $gutter;
+  position: relative;
   display: flex;
+  max-width: 100vw;
   flex-flow: column;
   height: auto;
-  position: relative;
+  margin-right: $gutter/2;
+  margin-bottom: $gutter;
+  margin-left: $gutter/2;
   background-color: $color-4;
   transition: 300ms ease-in-out;
-  max-width: 100vw;
+
   &:hover {
     background-color: #999;
     transition: 300ms ease-in-out;
   }
 
   @media (min-width: 800px) {
-	flex: 0 0 30%;
-	margin-right: $gutter/2;
-	margin-left: $gutter/2;
-	max-width: 33vw;
+    flex: 0 0 30%;
+    max-width: 33vw;
+    margin-right: $gutter/2;
+    margin-left: $gutter/2;
   }
 
   &__titlecat {
@@ -43,28 +44,29 @@
 
   &__grey {
     @media (min-width: 800px) {
-      background: $color-4;
       height: auto;
+      background: $color-4;
     }
   }
 
   &__h3 {
-    text-transform: uppercase;
     font-weight: 300;
+    text-transform: uppercase;
   }
 
   &__title {
     font-size: 1rem;
-    text-decoration: none;
     color: $color-1;
+    text-decoration: none;
   }
+
   &__finished {
     position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
     padding-right: $gutter/2;
     font-size: 4rem;
     color: $color-6;
-    z-index: 1;
-    right: 0;
-    bottom: 0;
   }
 }

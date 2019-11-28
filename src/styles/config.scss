@@ -10,13 +10,13 @@ $color-6: #1a1;
 $color-7: #fcffd2;
 $color-8: #cc9694;
 
-$font-main: 'Lora', serif;
-$font-heading: 'Roboto Mono', monospace;
+$font-main: "Lora", serif;
+$font-heading: "Roboto Mono", monospace;
 
 // Leturstærðir
 // 16 24 32 48
 
 @mixin columns($col: 1) {
-    // margföldum með 1% til að breyta gildi í % gildi
-    width: ($col /12 * 100) * 1%;
+  // margföldum með 1% til að breyta gildi í % gildi
+  width: ($col /12 * 100) * 1%;
 }

@@ -1,33 +1,31 @@
 @import "config";
 
 .button {
-  margin: auto;
   display: flex;
+  margin: auto;
+  margin-bottom: $gutter;
   flex-direction: row;
   justify-content: center;
-  align-content: center;
-  margin-bottom: $gutter;
 }
 
 .button__menu {
-  margin: auto;
   display: flex;
+  margin: auto;
   flex-direction: row;
   justify-content: space-between;
-  @media (min-width: 800px) {
-  }
 }
 
 .button__menu > * {
-  font-family: $font-heading;
-  margin: $gutter/2;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background-color: #ccc;
-  transition: 300ms ease-in-out;
-  border-radius: $gutter;
   padding: $gutter * 0.5 $gutter;
+  margin: $gutter/2;
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  background-color: #ccc;
+  border-radius: $gutter;
+  transition: 300ms ease-in-out;
+
   &:hover {
     background-color: #999;
     transition: 300ms ease-in-out;
@@ -35,35 +33,22 @@
 }
 
 .button__filter {
-	background-color: $color-5;
-	transition: 300ms ease-in-out;
-	&:hover {
-		background-color: $color-6;
-		transition: 300ms ease-in-out;
-	}
+  background-color: $color-5;
+  transition: 300ms ease-in-out;
+
+  &:hover {
+    background-color: $color-6;
+    transition: 300ms ease-in-out;
+  }
 }
 
-.buttons {
-	display: flex;
-	flex-direction: column; 
-	align-items: center;
-  
-	&__finish {
-	  border: none;
-	  font-family: $font-heading;
-	  font-size: 1rem;
-	  background: inherit;
-	  margin-bottom: $gutter*2;
-	  cursor: pointer;
-  
-	  &--done {
-		color: $color-5;
-	  }
-  
-	}
-  
-	&__back {
-	  text-decoration: none;
-	  color: $color-1;
-	}
+.buttons__finish {
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none; /* stylelint-disable-line */
+
+  &--done {
+    color: #1a1;
+  }
 }
