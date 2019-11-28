@@ -18,7 +18,9 @@ Slóð á verkefnið keyrandi á vefnum: xxx
 
 `npm install` skoðar listann yfir devDependencies í package.json skránni. Þar er að finna alla nauðsynlega pakka og hlaðast þeir þá sjálfkrafa niður.
 
-`npm run dev` keyrir alla pakkana samtímis og opnar verkefnið í browser.
+`npm run dev` keyrir sass-watch, rollup-watch (þar með talið babel-plugin) og browser-sync pakka samtímis og opnar verkefnið í vafra. Uppfærir breytingar á .html, .scss og .js skrám jafnóðum í vafra.
+
+
 
 
 # Uppbygging verkefnis
