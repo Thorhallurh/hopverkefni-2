@@ -33,20 +33,20 @@ export function el(name, ...children) {
 
 // hjálparfall til að útbúa cards-element
 export function elCard(title, category, thumbnail) {
-  const element = document.createElement(div);
+  const element = document.createElement('div');
   element.classList.add('list__card');
-  childTitle = document.createTextNode(p);
+  const childTitle = document.createTextNode('p');
   childTitle.classList.add('title');
   childTitle.textContent = title;
-  childCat = document.createTextNode(p);
+  const childCat = document.createTextNode('p');
   childCat.classList.add('category');
   childCat.textContent = category;
-  childThumb = document.createElement(img);
+  const childThumb = document.createElement('img');
   childCat.classList.add('thumbnail');
-  setAttribute.childThumb('src', `/img/${thumbnail}`);
-  element.appendChild(ChildThumb);
-  element.appendChild(ChildCat);
-  element.appendChild(ChildTitle);
+  childThumb.setAttribute('src', `/img/${thumbnail}`);
+  element.appendChild(childThumb);
+  element.appendChild(childCat);
+  element.appendChild(childTitle);
 
   return element;
 }
