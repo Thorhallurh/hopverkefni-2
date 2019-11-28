@@ -1,12 +1,11 @@
-import {el} from './helpers';
+import { el } from './helpers';
 
 
 /**
- * 
  * Element maker fyrir image
  */
 export function makeImage(image) {
-  if(!image) {
+  if (!image) {
     const gray = el('div');
     gray.classList.add('card__gray');
     return gray;
@@ -23,7 +22,7 @@ export function makeImage(image) {
 */
 export function makeTitle(title, slug) {
   const link = el('a');
-  link.href =  `fyrirlestur.html?slug=${slug}`;
+  link.href = `fyrirlestur.html?slug=${slug}`;
   const titleEl = el('h2', title);
   link.appendChild(titleEl);
   return link;
@@ -71,8 +70,8 @@ export function makeQuote(quote) {
 }
 
 /**
- * Element maker fyrir heading 
- * */
+* Element maker fyrir heading
+* */
 export function makeHeading(size, heading) {
   return el(size, heading);
 }
@@ -88,7 +87,7 @@ export function makeCode(code) {
 }
 
 /*
-* Element maker fyrir youtube vídeó 
+* Element maker fyrir youtube vídeó
 */
 export function makeVideo(youtube) {
   const videoEl = el('iframe');
@@ -99,7 +98,7 @@ export function makeVideo(youtube) {
 }
 
 /*
-* Element maker fyrir lista 
+* Element maker fyrir lista
 */
 export function makeList(listitem) {
   return el('li', listitem);
