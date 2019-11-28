@@ -49,11 +49,11 @@
   }
 
   &__code {
+    padding-bottom: $gutter;
     overflow: auto;
     @media (min-width: 800px) {
       overflow: visible;
     }
-    padding-bottom: $gutter;
   }
 }
 
