@@ -42,13 +42,23 @@
   }
 }
 
-.buttons__finish {
-  padding: 0;
-  cursor: pointer;
-  background: none;
-  border: none; /* stylelint-disable-line */
+.buttons {
+  display: flex;
+  flex-direction: column;
 
-  &--done {
-    color: #1a1;
+  &__finish {
+    margin-bottom: $gutter * 2;
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    border: none; /* stylelint-disable-line */
+
+    &--done {
+      color: #1a1;
+    }
+  }
+
+  &__back {
+    margin: auto;
   }
 }
