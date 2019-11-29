@@ -25,9 +25,8 @@
   display: flex;
   flex-flow: column;
   height: auto;
-  margin-top: $gutter;
   margin-right: $gutter/2;
-  margin-bottom: $gutter;
+  margin-bottom: $gutter*2;
   margin-left: $gutter/2;
   background-color: $color-4;
   transition: 300ms ease-in-out;

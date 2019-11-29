@@ -3,6 +3,7 @@
 .button {
   display: flex;
   margin: auto;
+  margin-top: $gutter;
   margin-bottom: $gutter;
   flex-direction: row;
   justify-content: center;
